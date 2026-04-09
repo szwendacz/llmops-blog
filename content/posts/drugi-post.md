@@ -2,14 +2,14 @@
 title: "Trudno wymyślić dobry tytuł"
 date: 2026-04-09
 draft: false
-tags: ["llm", "testy"]
+tags: ["llm", "raspberry", "sbc"]
 ---
 
 Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.
 
 Minęło parę miesięcy, znalazłem nową pracę, w której zajmuję się ewaluacją i testowaniem trzech różnych aplikacji wykorzystujących LLM. Przy okazji praca okazała się być na tyle interesująca i spokojna, że w końcu wróciła mi chęć do siedzenia wieczorami nad swoimi rzeczami.
 
-Tutaj dochodzimy do momentu, w którym pół świata kupowało MacBooki Mini i instalowało OpenClaw (używam już nazwy ostatecznej, żeby nie wprowadzać zbędnego zamieszania). Pomyślałem, że asystent to na tyle ciekawy temat, że warto go przetestować osobiście i zainstalowałem... PicoClaw. Za opisem z GitHuba: "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity". Oczywiście przy okazji pomyślałem, że fajnie byłoby, gdyby ten projekt miał jakąś namiastkę fizyczności (ten motyw będzie się powtarzać co jakiś czas), więc zamówiłem rekomendowaną płytkę SBC. Zamówienie było złożone za pośrednictwem AliExpress, więc musiałem cierpliwie odczekać dwa tygodnie.
+Tutaj dochodzimy do momentu, w którym pół świata kupowało Mac Mini i instalowało OpenClaw (używam już nazwy ostatecznej, żeby nie wprowadzać zbędnego zamieszania). Pomyślałem, że asystent to na tyle ciekawy temat, że warto go przetestować osobiście i zainstalowałem... PicoClaw. Za opisem z GitHuba: "Tiny, Fast, and Deployable anywhere — automate the mundane, unleash your creativity". Oczywiście przy okazji pomyślałem, że fajnie byłoby, gdyby ten projekt miał jakąś namiastkę fizyczności (ten motyw będzie się powtarzać co jakiś czas), więc zamówiłem rekomendowaną płytkę SBC. Zamówienie było złożone za pośrednictwem AliExpress, więc musiałem cierpliwie odczekać dwa tygodnie.
 
 W końcu listonosz zapukał do moich drzwi i przekazał mi przesyłkę. Nie ukrywam, że trochę się zdziwiłem, gdy po otwarciu paczki w środku nie było płytki, tylko moduł kamerki. Z tego miejsca chciałbym podziękować osobie, która projektowała opcje wyboru w aukcjach na AliExpress. Finalnie zamiast płytki miałem kamerę, która nie była mi potrzebna (teraz trochę żałuję, że ją odesłałem).
 
