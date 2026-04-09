@@ -1,0 +1,21 @@
+baseURL: "https://llmops.pl/"
+languageCode: "pl"
+title: "LLMOps"
+theme: "PaperMod"
+
+params:
+  homeInfoParams:
+    Title: "LLMOps"
+    Content: "Notatki z pracy z małymi modelami LLM"
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+
+menu:
+  main:
+    - name: "Archiwum"
+      url: "/archives/"
+      weight: 5
+    - name: "Tagi"
+      url: "/tags/"
+      weight: 10
