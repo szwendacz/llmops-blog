@@ -6,14 +6,18 @@
     <description>Recent content in Posts on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 13:26:36 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pierwszy post</title>
-      <link>http://localhost:1313/posts/pierwszy-post/</link>
-      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pierwszy-post/</guid>
-      <description>&lt;p&gt;Hello world&lt;/p&gt;</description>
+      <title>Asystent od środka</title>
+      <link>http://localhost:1313/posts/asystent_od_srodka/</link>
+      <pubDate>Fri, 17 Apr 2026 13:26:36 +0200</pubDate>
+      <guid>http://localhost:1313/posts/asystent_od_srodka/</guid>
+      <description>&lt;p&gt;Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.&lt;/p&gt;
+&lt;p&gt;Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować.
+Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne.
+Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.&lt;br&gt;
+Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą &amp;ldquo;/&amp;rdquo; i zdefiniowaną nazwą usługi czyli przykładowo &amp;ldquo;/pogoda&amp;rdquo; lub za pomocą przykładowej wiadomości &amp;ldquo;jaka jest dzisiaj pogoda?&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Trudno wymyślić dobry tytuł</title>

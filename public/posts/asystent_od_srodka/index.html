@@ -5,11 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | LLMOps</title>
+<title>Asystent od środka | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - LLMOps">
+<meta name="description" content="Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.
+Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować.
+Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne.
+Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.
+Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą &ldquo;/&rdquo; i zdefiniowaną nazwą usługi czyli przykładowo &ldquo;/pogoda&rdquo; lub za pomocą przykładowej wiadomości &ldquo;jaka jest dzisiaj pogoda?&rdquo;.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/asystent_od_srodka/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.199042e659bc7245f5609d333d6c044eb554a0640849bb874e1dff8eb0f57209.css" integrity="sha256-GZBC5lm8ckX1YJ0zPWwETrVUoGQISbuHTh3/jrD1cgk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +22,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/asystent_od_srodka/">
 <noscript>
     <style>
         #theme-toggle,
@@ -73,7 +76,7 @@
 
 </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -115,39 +118,69 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Asystent od środka
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.
-Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować. Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne. Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.
-Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą “/” i zdefiniowaną nazwą usługi czyli przykładowo “/pogoda” lub za pomocą przykładowej wiadomości “jaka jest dzisiaj pogoda?”.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-04-17 13:26:36 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to Asystent od środka" href="http://localhost:1313/posts/asystent_od_srodka/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Asystent od środka
+    </h1>
+    <div class="post-meta"><span title='2026-04-17 13:26:36 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Trudno wymyślić dobry tytuł
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.
-...</p>
+</div>
+  </header> 
+  <div class="post-content"><p>Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.</p>
+<p>Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować.
+Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne.
+Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.<br>
+Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą &ldquo;/&rdquo; i zdefiniowaną nazwą usługi czyli przykładowo &ldquo;/pogoda&rdquo; lub za pomocą przykładowej wiadomości &ldquo;jaka jest dzisiaj pogoda?&rdquo;.</p>
+<p>Podsumowując:</p>
+<pre tabindex="0"><code>CRON: pogoda, ciekawostka
+</code></pre><pre tabindex="0"><code>Interaktywne: pogoda, ciekawostka, podsumowanie artykułu, podsumowanie filmu z YT, wyszukanie w internecie, wiadomość do LLM
+</code></pre><p>Krótkie wyznanie: praktycznie nie korzystam z funkcji interaktywnych, a największa korzyść mam z podsumowań zarządzanych przez CRON. Wydaje mi się, że to dobry przykład potwierdzający to, że nie każdy projekt do nauki musi mieć sens.</p>
+<p>Dla lepszego zrozumienia jak działa mój asystent:</p>
+<ul>
+<li>Telegram: &ldquo;jaka jest pogoda?&rdquo;</li>
+<li>Asystent: funkcja do zarządzania botem wysyła request typu <em>call_llm_with_tools</em></li>
+<li>LLM: zwraca informację wybierz narzędzie <em>get_weather</em></li>
+<li>Asystent: uruchamia funkcję <em>tasks/weather.py</em>, która wykonuje request do API pogodowego</li>
+<li>LLM: otrzymuje dane JSON z opisem pogody i na podstawie prompta przygotowuje je w odpowiednim formacie</li>
+<li>Asystent: odpowiedź z LLM jest przesyłana jako wiadomość na Telegram</li>
+</ul>
+<p>Finalna wiadomość z podsumowaniem pogody wygląda następująco:</p>
+<blockquote>
+<p>Pogoda w Lublinie (15 kwietnia 2026):
+🌡️ Teraz: 8.3°C (odczuwalna: 6.6°C)
+☁️ Warunki: Częściowe zachmurzenie
+💨 Wiatr: 10.1 km/h z południowego wschodu
+💧 Wilgotność: 61%
+🌅 Wschód: 05:35 | Zachód: 19:26
+📅 Prognoza na dziś:</p>
+<ul>
+<li>Max: 13.9°C | Min: 7.2°C</li>
+</ul>
+<p>Dzień zapowiada się dość spokojnie z umiarkowanymi temperaturami. Nie będzie padać, więc parasol możesz zostawić w domu. Warto ubrać się warstwowo, ponieważ poranek jest chłodny, choć w ciągu dnia zrobi się przyjemniej. Cienka kurtka lub sweter będą odpowiednim wyborem na dzisiejszą aurę.</p>
+</blockquote>
+<p>To czego nie ma w powyższym opisie to informacja, że cała sesja jest logowana do Langfuse. Polecam każdemu wdrożenie narzędzia do observability jak najwcześniej, ponieważ dużo łatwiej rozwiązuje się napotkane problemy. W moim przypadku była to podwójna generacja wiadomości z podsumowaniem pogody. Pierwsza iteracja tej funkcjonalności miała o jeden krok za dużo więc podsumowanie wygenerowane w oparciu o mój prompt trafiało po raz kolejny do LLM i traciło wcześniej zdefiniowaną formę.</p>
+<p>Uważny czytelnik pewnie zauważy, że do funkcji <em>get_weather</em> nie jest dołączany argument z informacją na temat miasta dla którego ma być pobrana pogoda. Przyznam, że poszedłem tu na łatwiznę i nazwa jest zahardkodowana w funkcji. Nie sprawdzam pogody dla innych miasta więc taki wybór wydawał mi się naturalny.</p>
+<p>Na dzisiaj to tyle. W kolejnym poście w końcu przejdziemy do, moim skromnym zdaniem, dużo ciekawszej części związanej z samą płytką oraz małymi modelami, które jak się okazuje mają swoje niespodzianki.</p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2026-04-09 00:00:00 +0000 UTC'>April 9, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
-  <a class="entry-link" aria-label="post link to Trudno wymyślić dobry tytuł" href="http://localhost:1313/posts/drugi-post/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/drugi-post/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Trudno wymyślić dobry tytuł</span>
+  </a>
+</nav>
+
+  </footer>
 </article>
     </main>
     
