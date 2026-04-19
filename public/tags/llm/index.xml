@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trudno wymyślić dobry tytuł</title>
-      <link>http://localhost:1313/posts/drugi-post/</link>
+      <link>http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/</link>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/drugi-post/</guid>
+      <guid>http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/</guid>
       <description>&lt;p&gt;Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -4,9 +4,9 @@ title: "LLMOps"
 theme: "PaperMod"
 
 params:
-  label:
-    subtitle: "Notatki z pracy z małymi modelami LLM"
-  disableSpecial1stPost: true
+  homeInfoParams:
+    Title: "LLMOps"
+    Content: "Notatki z pracy z małymi modelami LLM"
   ShowReadingTime: true
   ShowShareButtons: false
   ShowPostNavLinks: true

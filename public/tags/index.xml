@@ -6,20 +6,48 @@
     <description>Recent content in Tags on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 19:23:56 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draxa</title>
+      <link>http://localhost:1313/tags/draxa/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/tags/draxa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Raspberry</title>
+      <link>http://localhost:1313/tags/raspberry/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/tags/raspberry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sbc</title>
+      <link>http://localhost:1313/tags/sbc/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/tags/sbc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zakupy</title>
+      <link>http://localhost:1313/tags/zakupy/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/tags/zakupy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asystent</title>
+      <link>http://localhost:1313/tags/asystent/</link>
+      <pubDate>Fri, 17 Apr 2026 13:26:36 +0200</pubDate>
+      <guid>http://localhost:1313/tags/asystent/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Llm</title>
       <link>http://localhost:1313/tags/llm/</link>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Testy</title>
-      <link>http://localhost:1313/tags/testy/</link>
-      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/testy/</guid>
       <description></description>
     </item>
   </channel>

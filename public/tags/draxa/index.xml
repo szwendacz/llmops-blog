@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Draxa on LLMOps</title>
+    <link>http://localhost:1313/tags/draxa/</link>
+    <description>Recent content in Draxa on LLMOps</description>
+    <generator>Hugo</generator>
+    <language>pl</language>
+    <lastBuildDate>Sat, 18 Apr 2026 19:23:56 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/draxa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draxa Q6q</title>
+      <link>http://localhost:1313/posts/draxa-q6q/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/posts/draxa-q6q/</guid>
+      <description>&lt;h2 id=&#34;zakup&#34;&gt;Zakup&lt;/h2&gt;
+&lt;p&gt;W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.&lt;/p&gt;
+&lt;p&gt;Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware&amp;rsquo;u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

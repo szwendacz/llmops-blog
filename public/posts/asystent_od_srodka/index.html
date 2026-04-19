@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Asystent od środka | LLMOps</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="asystent, raspberry">
 <meta name="description" content="Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.
 Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować.
 Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne.
@@ -14,7 +14,7 @@ Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzin
 Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą &ldquo;/&rdquo; i zdefiniowaną nazwą usługi czyli przykładowo &ldquo;/pogoda&rdquo; lub za pomocą przykładowej wiadomości &ldquo;jaka jest dzisiaj pogoda?&rdquo;.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/asystent_od_srodka/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.199042e659bc7245f5609d333d6c044eb554a0640849bb874e1dff8eb0f57209.css" integrity="sha256-GZBC5lm8ckX1YJ0zPWwETrVUoGQISbuHTh3/jrD1cgk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -80,7 +80,8 @@ Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, po
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps</a>
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -171,9 +172,16 @@ Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, po
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/asystent/">Asystent</a></li>
+      <li><a href="http://localhost:1313/tags/raspberry/">Raspberry</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/posts/drugi-post/">
+  <a class="prev" href="http://localhost:1313/posts/radxa_dragon_q6a-/">
+    <span class="title">« Poprzednia</span>
+    <br>
+    <span>Radxa Dragon Q6A </span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/">
     <span class="title">Następna »</span>
     <br>
     <span>Trudno wymyślić dobry tytuł</span>

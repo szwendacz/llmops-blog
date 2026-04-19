@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Llm | LLMOps</title>
+<title>Raspberry | LLMOps</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tags/llm/">
+<link rel="canonical" href="http://localhost:1313/tags/raspberry/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/llm/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/llm/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/raspberry/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/raspberry/">
 <noscript>
     <style>
         #theme-toggle,
@@ -119,9 +119,38 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    Llm
+    Raspberry
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Draxa Q6q
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zakup W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.
+Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware’u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-18 19:23:56 +0200 CEST'>April 18, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to Draxa Q6q" href="http://localhost:1313/posts/draxa-q6q/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Asystent od środka
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.
+Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować. Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne. Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.
+Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą “/” i zdefiniowaną nazwą usługi czyli przykładowo “/pogoda” lub za pomocą przykładowej wiadomości “jaka jest dzisiaj pogoda?”.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-17 13:26:36 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to Asystent od środka" href="http://localhost:1313/posts/asystent_od_srodka/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

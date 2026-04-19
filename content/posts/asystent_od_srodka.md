@@ -2,6 +2,7 @@
 date = '2026-04-17T13:26:36+02:00'
 draft = false
 title = 'Asystent od środka'
+tags= ["asystent", "raspberry"]
 +++
 
 Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa. 

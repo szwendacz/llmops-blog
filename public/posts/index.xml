@@ -6,8 +6,17 @@
     <description>Recent content in Posts on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Fri, 17 Apr 2026 13:26:36 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2026 19:23:56 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draxa Q6q</title>
+      <link>http://localhost:1313/posts/draxa-q6q/</link>
+      <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
+      <guid>http://localhost:1313/posts/draxa-q6q/</guid>
+      <description>&lt;h2 id=&#34;zakup&#34;&gt;Zakup&lt;/h2&gt;
+&lt;p&gt;W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.&lt;/p&gt;
+&lt;p&gt;Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware&amp;rsquo;u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Asystent od środka</title>
       <link>http://localhost:1313/posts/asystent_od_srodka/</link>
@@ -21,9 +30,9 @@ Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, po
     </item>
     <item>
       <title>Trudno wymyślić dobry tytuł</title>
-      <link>http://localhost:1313/posts/drugi-post/</link>
+      <link>http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/</link>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/drugi-post/</guid>
+      <guid>http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/</guid>
       <description>&lt;p&gt;Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.&lt;/p&gt;</description>
     </item>
   </channel>

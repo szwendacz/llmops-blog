@@ -2,25 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/kazdy_ma_swojego_asystenta/</loc>
-    <lastmod>2026-04-17T13:26:36+02:00</lastmod>
+    <loc>http://localhost:1313/tags/draxa/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/draxa-q6q/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-17T13:26:36+02:00</lastmod>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/raspberry/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sbc/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/zakupy/</loc>
+    <lastmod>2026-04-18T19:23:56+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/asystent/</loc>
+    <lastmod>2026-04-17T13:26:36+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/asystent_od_srodka/</loc>
     <lastmod>2026-04-17T13:26:36+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/llm/</loc>
     <lastmod>2026-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/testy/</loc>
-    <lastmod>2026-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/drugi-post/</loc>
+    <loc>http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/</loc>
     <lastmod>2026-04-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
