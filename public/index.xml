@@ -6,10 +6,22 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sat, 18 Apr 2026 19:23:56 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 20:58:43 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Radxa Dragon Q6A </title>
+      <title>Jaki model wariacie?</title>
+      <link>http://localhost:1313/posts/jaki_model_wariacie/</link>
+      <pubDate>Sun, 19 Apr 2026 20:58:43 +0200</pubDate>
+      <guid>http://localhost:1313/posts/jaki_model_wariacie/</guid>
+      <description>&lt;p&gt;Dygresja na początek.&lt;/p&gt;
+&lt;p&gt;Minęło już trochę czasu od momentu w którym robiłem to co będę opisywać i przyznaję, że nie pamiętam już wszystkich szczegółów. Muszę nad tym popracować bo czuję, że to będzie problem w przyszłości.&lt;/p&gt;
+&lt;h3 id=&#34;problemy-wieku-dziecięcego&#34;&gt;Problemy wieku dziecięcego&lt;/h3&gt;
+&lt;p&gt;Formalności mamy już za sobą więc przejdźmy do głównego tematu jakim będzie wybór małego modelu, który jest mózgiem mojego asystenta.
+Od samego początku chciałem żeby na nowej płytce pracował mały model i wiele obiecywałem sobie po dedykowanym procesorze na Radxa. Niestety jak to w życiu bywa sama specyfikacja techniczna bez oprogramowania nie działa i tak też było w tym przypadku. Oczywiście po części z mojej winy.
+Głównym winowajcą był system operacyjny, którego użyłem czyli &lt;a href=&#34;https://armbian.com&#34;&gt;Armbian&lt;/a&gt;. Nie wiem co mnie podkusiło, że wybrałem ten system zamiast zmodyfikowanej wersji Ubuntu dostarczanej przez producenta. W każdym razie poskutkowało to tym, że procesor NPU nie jest w tym momencie dostępny na żadnym systemie poza tym oferowanym przez Radxa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Radxa Dragon Q6A</title>
       <link>http://localhost:1313/posts/radxa_dragon_q6a-/</link>
       <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
       <guid>http://localhost:1313/posts/radxa_dragon_q6a-/</guid>

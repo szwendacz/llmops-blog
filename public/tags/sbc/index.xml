@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 18 Apr 2026 19:23:56 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/sbc/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Draxa Q6q</title>
-      <link>http://localhost:1313/posts/draxa-q6q/</link>
+      <title>Radxa Dragon Q6A</title>
+      <link>http://localhost:1313/posts/radxa_dragon_q6a-/</link>
       <pubDate>Sat, 18 Apr 2026 19:23:56 +0200</pubDate>
-      <guid>http://localhost:1313/posts/draxa-q6q/</guid>
+      <guid>http://localhost:1313/posts/radxa_dragon_q6a-/</guid>
       <description>&lt;h2 id=&#34;zakup&#34;&gt;Zakup&lt;/h2&gt;
 &lt;p&gt;W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.&lt;/p&gt;
 &lt;p&gt;Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware&amp;rsquo;u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.&lt;/p&gt;</description>
