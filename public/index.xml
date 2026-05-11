@@ -6,8 +6,17 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sun, 19 Apr 2026 20:58:43 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 12:02:46 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zmiana flow</title>
+      <link>http://localhost:1313/posts/zmiana_flow/</link>
+      <pubDate>Sun, 03 May 2026 12:02:46 +0200</pubDate>
+      <guid>http://localhost:1313/posts/zmiana_flow/</guid>
+      <description>&lt;h3 id=&#34;zmiana&#34;&gt;Zmiana&lt;/h3&gt;
+&lt;p&gt;Nie wiem co mnie podkusiło, ale postanowiłem zmienić flow działania swojego asystenta. Nie znaczy to, że poprzednio działał źle. Model wielkości 0.6B całkiem dobrze radził sobie z moimi zadaniami biorąc pod uwagę, że nie wymagałem od niego nic ponad to co wcześniej sprawdziłem. Miał służyć głównie jako router do tool callingu.
+Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo dodatkowej logiki, plus bardzo &amp;ldquo;usztywniła&amp;rdquo; flow przepływu danych. Z drugiej strony była ciekawa pod względem edukacyjnym więc jestem zadowolony.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Jaki model wariacie?</title>
       <link>http://localhost:1313/posts/jaki_model_wariacie/</link>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Zmiana flow | LLMOps</title>
+<meta name="keywords" content="">
+<meta name="description" content="Zmiana
+Nie wiem co mnie podkusiło, ale postanowiłem zmienić flow działania swojego asystenta. Nie znaczy to, że poprzednio działał źle. Model wielkości 0.6B całkiem dobrze radził sobie z moimi zadaniami biorąc pod uwagę, że nie wymagałem od niego nic ponad to co wcześniej sprawdziłem. Miał służyć głównie jako router do tool callingu.
+Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo dodatkowej logiki, plus bardzo &ldquo;usztywniła&rdquo; flow przepływu danych. Z drugiej strony była ciekawa pod względem edukacyjnym więc jestem zadowolony.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/zmiana_flow/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/zmiana_flow/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archiwum">
+                    <span>Archiwum</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Zmiana flow
+    </h1>
+    <div class="post-meta"><span title='2026-05-03 12:02:46 +0200 CEST'>May 3, 2026</span>&nbsp;·&nbsp;<span>4 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="zmiana">Zmiana<a hidden class="anchor" aria-hidden="true" href="#zmiana">#</a></h3>
+<p>Nie wiem co mnie podkusiło, ale postanowiłem zmienić flow działania swojego asystenta. Nie znaczy to, że poprzednio działał źle. Model wielkości 0.6B całkiem dobrze radził sobie z moimi zadaniami biorąc pod uwagę, że nie wymagałem od niego nic ponad to co wcześniej sprawdziłem. Miał służyć głównie jako router do tool callingu.
+Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo dodatkowej logiki, plus bardzo &ldquo;usztywniła&rdquo; flow przepływu danych. Z drugiej strony była ciekawa pod względem edukacyjnym więc jestem zadowolony.</p>
+<p>Poniżej krótkie przedstawienie starego i nowego flow:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Krok</th>
+          <th>Stare flow</th>
+          <th>Nowe flow</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Wiadomość trafia do <code>dispatch()</code></td>
+          <td>Wiadomość trafia do <code>dispatch()</code></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Buduj messages z historią i system promptem</td>
+          <td>Sprawdź czy jest URL w wiadomości</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Wyślij do OpenRouter z <code>TOOL_SCHEMAS</code></td>
+          <td>Jeśli URL: wybierz <code>summarize_article</code> lub <code>summarize_youtube</code> bez LLM</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>OpenRouter decyduje które narzędzie wywołać</td>
+          <td>Jeśli brak URL: <strong>klasyfikator MLP</strong> decyduje o narzędziu lokalnie</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>OpenRouter zwraca nazwę narzędzia + argumenty</td>
+          <td>Jeśli <code>get_weather</code> lub <code>get_fun_fact</code>: wywołaj narzędzie bez argumentów</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Wykonaj narzędzie</td>
+          <td>Jeśli <code>web_search</code>: llama-server (0.6B + <strong>GBNF</strong>) ekstrahuje argument <code>query</code></td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Wynik wraca do OpenRouter</td>
+          <td>Jeśli <code>none</code>: llama-server (0.6B) odpowiada bezpośrednio</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>OpenRouter generuje finalną odpowiedź</td>
+          <td>Wykonaj narzędzie (jeśli dotyczy)</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Zwróć odpowiedź</td>
+          <td>Zwróć wynik (PASSTHROUGH) lub odpowiedź llama-server</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="co-nowego">Co nowego?<a hidden class="anchor" aria-hidden="true" href="#co-nowego">#</a></h3>
+<p>Nowe flow ma dwie ciekawe rzeczy z którymi wcześniej nie miałem do czynienia. Chodzi o klasyfikator MLP i GBNF.</p>
+<h3 id="klasyfikator"><em>Klasyfikator</em><a hidden class="anchor" aria-hidden="true" href="#klasyfikator">#</a></h3>
+<p>Bardziej szczegółowe flow wywoływania narzędzi wygląda następująco:</p>
+<ul>
+<li>Czy w zapytaniu jest URL? → tak/nie (regex https?://)</li>
+<li>Jeśli tak — czy URL zawiera youtube.com lub youtu.be? → summarize_youtube</li>
+<li>Jeśli tak, ale nie YouTube → summarize_article</li>
+<li>Jeśli nie ma URL → klasyfikator decyduje spośród 4 klas + none</li>
+</ul>
+<p>To co najciekawsze dzieje się na ostatnim kroku. Szybkie przypomnienie czym jest klasyfikator MLP:</p>
+<blockquote>
+<p>Klasyfikator MLP (Multilayer Perceptron) to popularny rodzaj sztucznej sieci neuronowej służący do klasyfikacji danych, czyli przypisywania ich do określonych kategorii.</p>
+</blockquote>
+<p>W moim przypadku klasyfikator został wytrenowany na dosyć małym zbiorze danych, który obejmował 300 przykładów podzielonych na 4 kategorie:</p>
+<ul>
+<li>get_weather — 75 przykładów</li>
+<li>web_search — 75 przykładów</li>
+<li>get_fun_fact — 75 przykładów</li>
+<li>none — 75 przykładów</li>
+</ul>
+<p>Dane treningowe to po prostu możliwe zwroty i ich wariacje, których mogłem użyć w celu wywołania danego narzędzia. Poniżej krótki wycinek dla każdego z nich.</p>
+<pre tabindex="0"><code>{
+  &#34;get_weather&#34;: [
+    &#34;jaka pogoda&#34;,
+    &#34;pogoda w warszawie&#34;,
+  ],
+  &#34;web_search&#34;: [
+    &#34;jaka cena zlota dzisiaj&#34;,
+    &#34;kurs euro do zlotego teraz&#34;,
+  ],
+  &#34;get_fun_fact&#34;: [
+    &#34;powiedz mi ciekawostke&#34;,
+    &#34;jakas ciekawostka&#34;,
+  ],
+  &#34;none&#34;: [
+    &#34;co to jest fotosynteza&#34;,
+    &#34;jak dziala neuralna siec&#34;,
+  ]
+}
+</code></pre><p>Generalnie jak na tak mały dataset jakość klasyfikacji jest moim zdaniem bardzo dobra. Dokładność na zbiorze testowym to 0.93, a dla poszczególnych funkcji tak jak poniżej:</p>
+<ul>
+<li>get_fun_fact - 0.93</li>
+<li>get_weather - 1.00</li>
+<li>
+<pre><code>    none - 0.87      
+</code></pre>
+</li>
+<li>web_search - 0.93</li>
+</ul>
+<p>Zgodnie z tym co było do przewidzenia najmniejszą dokładność ma kategoria NONE, która odnosi się do wiedzy samego modelu, ale wydaje mi się, że to całkiem normalne - takie zapytania są najtrudniejsze do przypisania, a z drugiej strony nie używam małego modelu do ogólnych pytań.</p>
+<p>Podsumowując: dzięki regułom regex, które filtrują funkcje summarize_youtube/summarize_article oraz klasyfikatorowi, filtruję na wejściu wywołania dostępnych narzędzi i upewniam się, że zostanie wywołane prawidłowe.</p>
+<h3 id="gbnf"><em>GBNF</em><a hidden class="anchor" aria-hidden="true" href="#gbnf">#</a></h3>
+<p>Co tak właściwie kryje się pod tym tajemniczym skrótem? Przyznam szczerze, że do momentu aż nie zacząłem tego projektu nigdy nie słyszałem o czymś takim.</p>
+<blockquote>
+<p>GBNF (GGML Backus-Naur Form) to język definiowania gramatyk, stworzony w celu nakładania ograniczeń na wyniki generowane przez duże modele językowe.</p>
+</blockquote>
+<p>A jak to wygląda w praktyce? Do tej pory wiedziałem, że jestem w stanie kontrolować wyjście modelu za pomocą Pydantic/structured outputs. To, czym się różnią te dwie metody, to moment w którym dane podejście zaczyna działać: Pydantic już po generacji odpowiedzi, a gramatyka <em>w trakcie</em> generacji, ponieważ nie pozwala wygenerować odpowiedzi spoza zasad dołączanych do requestu. Jest to swoisty przykład samplowania tokenów tak jak powszechnie znana temperatura.</p>
+<h3 id="jak-to-się-sprawdza">Jak to się sprawdza?<a hidden class="anchor" aria-hidden="true" href="#jak-to-się-sprawdza">#</a></h3>
+<p>Nie ukrywam, że bardzo dobrze. Czasem zdarzają się potknięcia w przypadku wywołania web_search, ale liczba błędów jest mała. Najważniejsze jest dla mnie to, że praktycznie całość logiki stojącej za wywoływaniem narzędzi jest zlokalizowana lokalnie na płytce.
+Z praktycznego punktu widzenia ta zmiana nie miała sensu, ponieważ przy mojej liczbie narzędzi mogłem skorzystać z dużego modelu i miałbym 100% pewność, że każde wywołanie będzie prawidłowe. Podkreślałem to już pewnie parę razy, ale dalej będę to robić - ten projekt nie musi być sensowny. Jego głównym celem jest nauka i zmiana flow idealnie wpisała się w to założenie.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/jaki_model_wariacie/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Jaki model wariacie?</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">LLMOps</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
