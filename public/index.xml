@@ -6,8 +6,26 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sun, 03 May 2026 12:02:46 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 10:26:49 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Duże modele są nudne</title>
+      <link>http://localhost:1313/posts/duze_modele_sa_nudne/</link>
+      <pubDate>Wed, 20 May 2026 10:26:49 +0200</pubDate>
+      <guid>http://localhost:1313/posts/duze_modele_sa_nudne/</guid>
+      <description>&lt;p&gt;Śledziłem wczoraj na Twitterze doniesienia z Google I/O 2026 i oczywiście doczekaliśmy się zapowiedzi nowych modeli. Poniżej wkleję te dwa największe:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Gemini 3.5 Flash released&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gemini 3.5 Pro announced&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nie wiem czy to tylko mój problem, ale to ogłoszenie nie zrobiło na mnie żadnego wrażenia. Przypomniała mi się grafika, którą widziałem w jakimś poście i moim zdaniem doskonale oddaje to co się aktualnie dzieje:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;The cycle never ends)&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/the-cycle-never-ends-v0-c8s2b91hk52f1.jpeg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że model jest lepszy objawia się po prostu wyższym wynikiem w jednym z syntetycznych testów takich jak SWE-Bench lub Humanity&amp;rsquo;s Last Exam:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Zmiana flow</title>
       <link>http://localhost:1313/posts/zmiana_flow/</link>

@@ -5,11 +5,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | LLMOps</title>
+<title>Duże modele są nudne | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - LLMOps">
+<meta name="description" content="Śledziłem wczoraj na Twitterze doniesienia z Google I/O 2026 i oczywiście doczekaliśmy się zapowiedzi nowych modeli. Poniżej wkleję te dwa największe:
+
+
+Gemini 3.5 Flash released
+
+
+Gemini 3.5 Pro announced
+
+
+Nie wiem czy to tylko mój problem, ale to ogłoszenie nie zrobiło na mnie żadnego wrażenia. Przypomniała mi się grafika, którą widziałem w jakimś poście i moim zdaniem doskonale oddaje to co się aktualnie dzieje:
+
+Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że model jest lepszy objawia się po prostu wyższym wynikiem w jednym z syntetycznych testów takich jak SWE-Bench lub Humanity&rsquo;s Last Exam:">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +29,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
 <noscript>
     <style>
         #theme-toggle,
@@ -73,7 +83,7 @@
 
 </script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -116,81 +126,51 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Zmiana flow
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Zmiana Nie wiem co mnie podkusiło, ale postanowiłem zmienić flow działania swojego asystenta. Nie znaczy to, że poprzednio działał źle. Model wielkości 0.6B całkiem dobrze radził sobie z moimi zadaniami biorąc pod uwagę, że nie wymagałem od niego nic ponad to co wcześniej sprawdziłem. Miał służyć głównie jako router do tool callingu. Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo dodatkowej logiki, plus bardzo “usztywniła” flow przepływu danych. Z drugiej strony była ciekawa pod względem edukacyjnym więc jestem zadowolony.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-05-03 12:02:46 +0200 CEST'>May 3, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
-  <a class="entry-link" aria-label="post link to Zmiana flow" href="http://localhost:1313/posts/zmiana_flow/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Duże modele są nudne
+    </h1>
+    <div class="post-meta"><span title='2026-05-20 10:26:49 +0200 CEST'>May 20, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Jaki model wariacie?
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Dygresja na początek.
-Minęło już trochę czasu od momentu w którym robiłem to co będę opisywać i przyznaję, że nie pamiętam już wszystkich szczegółów. Muszę nad tym popracować bo czuję, że to będzie problem w przyszłości.
-Problemy wieku dziecięcego Formalności mamy już za sobą więc przejdźmy do głównego tematu jakim będzie wybór małego modelu, który jest mózgiem mojego asystenta. Od samego początku chciałem żeby na nowej płytce pracował mały model i wiele obiecywałem sobie po dedykowanym procesorze na Radxa. Niestety jak to w życiu bywa sama specyfikacja techniczna bez oprogramowania nie działa i tak też było w tym przypadku. Oczywiście po części z mojej winy. Głównym winowajcą był system operacyjny, którego użyłem czyli Armbian. Nie wiem co mnie podkusiło, że wybrałem ten system zamiast zmodyfikowanej wersji Ubuntu dostarczanej przez producenta. W każdym razie poskutkowało to tym, że procesor NPU nie jest w tym momencie dostępny na żadnym systemie poza tym oferowanym przez Radxa.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-04-19 20:58:43 +0200 CEST'>April 19, 2026</span>&nbsp;·&nbsp;<span>6 min</span></footer>
-  <a class="entry-link" aria-label="post link to Jaki model wariacie?" href="http://localhost:1313/posts/jaki_model_wariacie/"></a>
-</article>
+</div>
+  </header> 
+  <div class="post-content"><p>Śledziłem wczoraj na Twitterze doniesienia z Google I/O 2026 i oczywiście doczekaliśmy się zapowiedzi nowych modeli. Poniżej wkleję te dwa największe:</p>
+<ul>
+<li>
+<p>Gemini 3.5 Flash released</p>
+</li>
+<li>
+<p>Gemini 3.5 Pro announced</p>
+</li>
+</ul>
+<p>Nie wiem czy to tylko mój problem, ale to ogłoszenie nie zrobiło na mnie żadnego wrażenia. Przypomniała mi się grafika, którą widziałem w jakimś poście i moim zdaniem doskonale oddaje to co się aktualnie dzieje:</p>
+<p><img alt="The cycle never ends)" loading="lazy" src="/images/the-cycle-never-ends-v0-c8s2b91hk52f1.jpeg"></p>
+<p>Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że model jest lepszy objawia się po prostu wyższym wynikiem w jednym z syntetycznych testów takich jak SWE-Bench lub Humanity&rsquo;s Last Exam:</p>
+<p><img alt="Gemini 3.5 benchmarks" loading="lazy" src="/images/gemini-3-5__benchmarks__light.gif"></p>
+<p>Nie mam pewności, ale wydaje mi się, że dla osób spoza IT te liczby nie mają żadnego znaczenia. Typowy user wybiera LLM ze względu na popularność albo opłacalność. ChatGPT był pierwszy więc ma naturalną przewagę, Google dorzuca swoje modele w ramach usług abonamentowych. Anthropic wybił się na zdolnościach kodowania. Każdy z głównych modeli jest całkowicie wystarczający dla typowego użytkownika. Wydaje mi się, że w &ldquo;ślepym teście modeli&rdquo; większość osób (łącznie ze mną) nie byłoby w stanie rozpoznać jakiego dostawcy używa.</p>
+<p>Jedną z zalet nowych modeli mogą być świeże dane treningowe (Opus 4.7 ma dane ze stycznia 2026), ale czy jest to tak duża zaleta skoro każdy z nich może wyszukać na bieżąco informacje z sieci? Nie jestem pewien czy typowy user w ogóle zwraca uwagę na ten parametr.</p>
+<p>Pamiętam jak w tamtym roku po premierze Claude 3.7 mój były szef nie był w stanie przestać zachwalać tego modelu. Rok później robi pewnie dokładnie to samo z modelem 4.7, a ja zastanawiam się kiedy w końcu uzna, że jakiś model jest wystarczająco dobry. Sytuacja z nadmiarem możliwości przypomina mi trochę sprawę z developmentem aplikacji na Androida. Początki były skromne bo hardware pierwszych telefonów wymagał kompromisów i dbania o optymalizacje. Później RAM był coraz tańszy (były takie czasy&hellip;), a CPU coraz lepsze więc nikt nie zawracał sobie głowy wydajnością. Finalnie skończyliśmy na tym, że telefony z Androidem mają po 12-16GB RAM i nikogo to już nie szokuje.</p>
+<p>Zdaje sobie sprawę z tego, że nowe modele są odpowiedzią na rozwój agentów, ale nie mogę pozbyć się wrażenia, że nie wykorzystujemy w pełni tego co już mamy tylko wymyślamy koło od nowa. Oczywiście jestem świadomy tego, że to przypomina trochę gonienie króliczka i akcjonariusze spodziewają się pewnie ciągle nowych i lepszych modeli, ale osobiście mam o wiele większą satysfakcję z pracy z małym modelem. Taki model wymusza dyscyplinę i dokładne zaplanowanie tego co chce się z nim zrobić i jakie efekty chce się osiągnąć w przeciwieństwie do dużego modelu, który może praktycznie wszystko. Nie namawiam nikogo do porzucenia top-tier modeli, ale zachęcam do spojrzenia na to co się dzieje też na samym dole stawki.</p>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Radxa Dragon Q6A
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Zakup W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.
-Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware’u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-04-18 19:23:56 +0200 CEST'>April 18, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to Radxa Dragon Q6A" href="http://localhost:1313/posts/radxa_dragon_q6a-/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Asystent od środka
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Zgodnie z obietnicą z poprzedniego posta dzisiaj skupię się na funkcjonalnościach swojego agenta. Od razu zaznaczę, że nie jest tak rozbudowany jak swój pierwowzór oraz nie ma dostępu do katalogu gotowych umiejętności. Każda nowa funkcja musi zostać napisana od nowa.
-Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Telegram. Nie była to moja platforma pierwszego wyboru, ale sposób konfiguracji był na tyle prosty, że nie chciałem na start tego komplikować. Funkcjonalności asystenta mógłbym podzielić na dwie grupy: pasywne i aktywne. Funkcje pasywne zarządzane są przez CRON, który odpala dwie funkcje: o godzinie 6 wysyła podsumowanie pogody, a o godzinie 6:30 codzienną ciekawostkę.
-Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą “/” i zdefiniowaną nazwą usługi czyli przykładowo “/pogoda” lub za pomocą przykładowej wiadomości “jaka jest dzisiaj pogoda?”.
-...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-04-17 13:26:36 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to Asystent od środka" href="http://localhost:1313/posts/asystent_od_srodka/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Trudno wymyślić dobry tytuł
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-04-09 00:00:00 +0000 UTC'>April 9, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
-  <a class="entry-link" aria-label="post link to Trudno wymyślić dobry tytuł" href="http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/zmiana_flow/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Zmiana flow</span>
+  </a>
+</nav>
+
+  </footer>
 </article>
     </main>
     
