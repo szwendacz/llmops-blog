@@ -5,22 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Duże modele są nudne | LLMOps</title>
+<title>LLM w teorii | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="Śledziłem wczoraj na Twitterze doniesienia z Google I/O 2026 i oczywiście doczekaliśmy się zapowiedzi nowych modeli. Poniżej wkleję te dwa największe:
-
-
-Gemini 3.5 Flash released
-
-
-Gemini 3.5 Pro announced
-
-
-Nie wiem czy to tylko mój problem, ale to ogłoszenie nie zrobiło na mnie żadnego wrażenia. Przypomniała mi się grafika, którą widziałem w jakimś poście i moim zdaniem doskonale oddaje to co się aktualnie dzieje:
-
-Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że model jest lepszy objawia się po prostu wyższym wynikiem w jednym z syntetycznych testów takich jak SWE-Bench lub Humanity&rsquo;s Last Exam:">
+<meta name="description" content="Ostatnio doszedłem do wniosku, że tak naprawdę nie wiem jak działają LLMy. Rozumiem ich działanie od strony praktycznej, ale część teoretyczną rozumiem raczej hasłowo. Uznałem, że to dobry pomysł na aplikację więc rozpisałem zadania i przez weekend zbudowałem ją z pomocą Clauda. Cały projekt jest hostowany na mojej płytce Radxa Q6A, która po raz kolejny okazała się jednym z najlepszych wydatków tego roku.
+Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów pogrupowanych w bloki tematyczne. Codziennie o godzinie 8:30 dostępna jest nowa lekcja zawierająca świeże materiały.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
+<link rel="canonical" href="http://localhost:1313/posts/llm_w_teorii/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -29,7 +19,7 @@ Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że mo
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/llm_w_teorii/">
 <noscript>
     <style>
         #theme-toggle,
@@ -132,30 +122,36 @@ Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że mo
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Duże modele są nudne
+      LLM w teorii
     </h1>
-    <div class="post-meta"><span title='2026-05-20 10:26:49 +0200 CEST'>May 20, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
+    <div class="post-meta"><span title='2026-05-20 14:10:19 +0200 CEST'>May 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Śledziłem wczoraj na Twitterze doniesienia z Google I/O 2026 i oczywiście doczekaliśmy się zapowiedzi nowych modeli. Poniżej wkleję te dwa największe:</p>
-<ul>
-<li>
-<p>Gemini 3.5 Flash released</p>
-</li>
-<li>
-<p>Gemini 3.5 Pro announced</p>
-</li>
-</ul>
-<p>Nie wiem czy to tylko mój problem, ale to ogłoszenie nie zrobiło na mnie żadnego wrażenia. Przypomniała mi się grafika, którą widziałem w jakimś poście i moim zdaniem doskonale oddaje to co się aktualnie dzieje:</p>
-<p><img alt="The cycle never ends)" loading="lazy" src="/images/the-cycle-never-ends-v0-c8s2b91hk52f1.jpeg"></p>
-<p>Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że model jest lepszy objawia się po prostu wyższym wynikiem w jednym z syntetycznych testów takich jak SWE-Bench lub Humanity&rsquo;s Last Exam:</p>
-<p><img alt="Gemini 3.5 benchmarks" loading="lazy" src="/images/gemini-3-5__benchmarks__light.gif"></p>
-<p>Nie mam pewności, ale wydaje mi się, że dla osób spoza IT te liczby nie mają żadnego znaczenia. Typowy user wybiera LLM ze względu na popularność albo opłacalność. ChatGPT był pierwszy więc ma naturalną przewagę, Google dorzuca swoje modele w ramach usług abonamentowych. Anthropic wybił się na zdolnościach kodowania. Każdy z głównych modeli jest całkowicie wystarczający dla typowego użytkownika. Wydaje mi się, że w &ldquo;ślepym teście modeli&rdquo; większość osób (łącznie ze mną) nie byłoby w stanie rozpoznać jakiego dostawcy używa.</p>
-<p>Jedną z zalet nowych modeli mogą być świeże dane treningowe (Opus 4.7 ma dane ze stycznia 2026), ale czy jest to tak duża zaleta skoro każdy z nich może wyszukać na bieżąco informacje z sieci? Nie jestem pewien czy typowy user w ogóle zwraca uwagę na ten parametr.</p>
-<p>Pamiętam jak w tamtym roku po premierze Claude 3.7 mój były szef nie był w stanie przestać zachwalać tego modelu. Rok później robi pewnie dokładnie to samo z modelem 4.7, a ja zastanawiam się kiedy w końcu uzna, że jakiś model jest wystarczająco dobry. Sytuacja z nadmiarem możliwości przypomina mi trochę sprawę z developmentem aplikacji na Androida. Początki były skromne bo hardware pierwszych telefonów wymagał kompromisów i dbania o optymalizacje. Później RAM był coraz tańszy (były takie czasy&hellip;), a CPU coraz lepsze więc nikt nie zawracał sobie głowy wydajnością. Finalnie skończyliśmy na tym, że telefony z Androidem mają po 12-16GB RAM i nikogo to już nie szokuje.</p>
-<p>Zdaje sobie sprawę z tego, że nowe modele są odpowiedzią na rozwój agentów, ale nie mogę pozbyć się wrażenia, że nie wykorzystujemy w pełni tego co już mamy tylko wymyślamy koło od nowa. Oczywiście jestem świadomy tego, że to przypomina trochę gonienie króliczka i akcjonariusze spodziewają się pewnie ciągle nowych i lepszych modeli, ale osobiście mam o wiele większą satysfakcję z pracy z małym modelem. Taki model wymusza dyscyplinę i dokładne zaplanowanie tego co chce się z nim zrobić i jakie efekty chce się osiągnąć w przeciwieństwie do dużego modelu, który może praktycznie wszystko. Nie namawiam nikogo do porzucenia top-tier modeli, ale zachęcam do spojrzenia na to co się dzieje też na samym dole stawki.</p>
-<p>PS Jeśli tak ma wyglądać <a href="/Users/bartlomiejkalinski/Documents/llmops-blog/content/posts">przyszłość</a>, to ja dziękuję.</p>
+  <div class="post-content"><p>Ostatnio doszedłem do wniosku, że tak naprawdę nie wiem jak działają LLMy. Rozumiem ich działanie od strony praktycznej, ale część teoretyczną rozumiem raczej hasłowo. Uznałem, że to dobry pomysł na aplikację więc rozpisałem zadania i przez weekend zbudowałem ją z pomocą Clauda. Cały projekt jest hostowany na mojej płytce Radxa Q6A, która po raz kolejny okazała się jednym z najlepszych wydatków tego roku.</p>
+<p>Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów pogrupowanych w bloki tematyczne. Codziennie o godzinie 8:30 dostępna jest nowa lekcja zawierająca świeże materiały.</p>
+<p>Dla lepszego kontekstu poniżej znajduje się blok pierwszy, który omawia właśnie podstawy teoretyczne.</p>
+<p><strong>Fundamentals (10)</strong></p>
+<ol>
+<li>Tokenizacja — jak tekst staje się tokenami, BPE, wpływ na koszty</li>
+<li>Embeddingi — czym są, jak powstają, różnica od tokenów</li>
+<li>Architektura transformera — encoder vs decoder vs encoder-decoder</li>
+<li>Attention mechanism — self-attention, multi-head attention, po co istnieje</li>
+<li>Context window — limity, &ldquo;lost in the middle&rdquo;, praktyczne konsekwencje</li>
+<li>Temperature, top-k, top-p — mechanizmy samplingu</li>
+<li>Base model vs instruction-tuned vs RLHF-aligned</li>
+<li>Parametry modelu — co oznacza 7B, wpływ na pamięć i szybkość</li>
+<li>Kwantyzacja — INT4/INT8, GGUF, wpływ na jakość vs szybkość</li>
+<li>Hallucynacje — skąd się biorą, dlaczego modele kłamią pewnie</li>
+</ol>
+<p>Każdorazowo lekcja generowana jest na podstawie przygotowanego przeze mnie promptu. Korzystam z modelu GPT 5.4, ponieważ generuje moim zdaniem najciekawsze lekcje. Następnie na podstawie lekcji, kolejny prompt generuje quiz składający się z 8 pytań z jedną dobrą odpowiedzią. Dla podwyższenia stawki błędne odpowiedzi nie wyglądają na pierwszy rzut oka na błędne, ponieważ staram się w quizie unikać cytowania 1:1 treści lekcji.</p>
+<p>Po zakończeniu lekcji mogę zaznaczyć czy w kolejnym dniu chcę przejść przez ten sam temat raz jeszcze czy przechodzimy do kolejnego z listy.</p>
+<p>Aplikacja jak widać jest bardzo prosta, a UI czysty. W ramach ciekawostki powiem, że jednym z wymagań było to, aby lekcja oraz quiz prawidłowo działały na moim czytniku ebooków Kobo. Generowana strona to czysty HTML + CSS, ponieważ silnik przeglądarki na Kobo to WebKit, który słabo radzi sobie z JavaScriptem. Po paru iteracjach udało się to osiągnąć więc w trakcie nauki mogę skupić się na treści i nie mam żadnych rozpraszaczy.</p>
+<p>Codzienna nauka, nawet w tak prostej formie jak moja, wyrabia nawyk i siłą rzeczy ułatwia lepsze zrozumienie tego co się dzieje we wnętrzu modelu więc termin black-box testing każdego dnia jest mniej black;)</p>
+<p><img alt="Czytnik-lekcja)" loading="lazy" src="/images/llm_w_teorii/czytnik-lekcja.jpeg"></p>
+<p><img alt="Czytnik-quiz)" loading="lazy" src="/images/llm_w_teorii/czytnik-quiz.jpeg"></p>
+<p><img alt="Desktop-lekcja)" loading="lazy" src="/images/llm_w_teorii/desktop-lekcja.jpeg"></p>
+<p><img alt="Desktop-quiz)" loading="lazy" src="/images/llm_w_teorii/desktop-quiz.jpeg"></p>
 
 
   </div>
@@ -164,15 +160,10 @@ Nowe modele są po prostu nudne bo co miesiąc mamy nowy, lepszy LLM. To, że mo
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/llm_w_teorii/">
-    <span class="title">« Poprzednia</span>
-    <br>
-    <span>LLM w teorii</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/zmiana_flow/">
+  <a class="next" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
     <span class="title">Następna »</span>
     <br>
-    <span>Zmiana flow</span>
+    <span>Duże modele są nudne</span>
   </a>
 </nav>
 

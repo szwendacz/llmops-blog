@@ -6,8 +6,16 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Wed, 20 May 2026 10:26:49 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 14:10:19 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM w teorii</title>
+      <link>http://localhost:1313/posts/llm_w_teorii/</link>
+      <pubDate>Wed, 20 May 2026 14:10:19 +0200</pubDate>
+      <guid>http://localhost:1313/posts/llm_w_teorii/</guid>
+      <description>&lt;p&gt;Ostatnio doszedłem do wniosku, że tak naprawdę nie wiem jak działają LLMy. Rozumiem ich działanie od strony praktycznej, ale część teoretyczną rozumiem raczej hasłowo. Uznałem, że to dobry pomysł na aplikację więc rozpisałem zadania i przez weekend zbudowałem ją z pomocą Clauda. Cały projekt jest hostowany na mojej płytce Radxa Q6A, która po raz kolejny okazała się jednym z najlepszych wydatków tego roku.&lt;/p&gt;
+&lt;p&gt;Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów pogrupowanych w bloki tematyczne. Codziennie o godzinie 8:30 dostępna jest nowa lekcja zawierająca świeże materiały.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Duże modele są nudne</title>
       <link>http://localhost:1313/posts/duze_modele_sa_nudne/</link>
