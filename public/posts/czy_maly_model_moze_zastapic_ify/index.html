@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>LLM w teorii | LLMOps</title>
+<title>Czy mały model może zastąpić ify? | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="Ostatnio doszedłem do wniosku, że tak naprawdę nie wiem jak działają LLMy. Rozumiem ich działanie od strony praktycznej, ale część teoretyczną rozumiem raczej hasłowo. Uznałem, że to dobry pomysł na aplikację więc rozpisałem zadania i przez weekend zbudowałem ją z pomocą Clauda. Cały projekt jest hostowany na mojej płytce Radxa Q6A, która po raz kolejny okazała się jednym z najlepszych wydatków tego roku.
-Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów pogrupowanych w bloki tematyczne. Codziennie o godzinie 8:30 dostępna jest nowa lekcja zawierająca świeże materiały.">
+<meta name="description" content="Tym wpisem zaczynam całą serię postów związanych z moim aktualnym projektem - nazwałem go roboczo Edge AI. Celem projektu jest odpowiedź na pytanie czy model Qwen3-0.6B nadaje się do zastosowania w kontekście Edge AI.
+Na potrzeby projektu przyjąłem założenie, że wdrożenie zostało wykonane w firmie logistycznej. Od razu zaznaczę, że nie mam doświadczenia w tej branży więc chodzi tylko o zakotwiczenie projektu w &ldquo;przemysłowej&rdquo; narracji. Doszedłem do wniosku, że dzięki temu małemu zabiegowi projekt będzie bardziej rzeczywisty.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/llm_w_teorii/">
+<link rel="canonical" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,7 +19,7 @@ Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów 
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/llm_w_teorii/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/">
 <noscript>
     <style>
         #theme-toggle,
@@ -122,36 +122,96 @@ Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów 
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      LLM w teorii
+      Czy mały model może zastąpić ify?
     </h1>
-    <div class="post-meta"><span title='2026-05-20 14:10:19 +0200 CEST'>May 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2026-05-24 14:22:30 +0200 CEST'>May 24, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Ostatnio doszedłem do wniosku, że tak naprawdę nie wiem jak działają LLMy. Rozumiem ich działanie od strony praktycznej, ale część teoretyczną rozumiem raczej hasłowo. Uznałem, że to dobry pomysł na aplikację więc rozpisałem zadania i przez weekend zbudowałem ją z pomocą Clauda. Cały projekt jest hostowany na mojej płytce Radxa Q6A, która po raz kolejny okazała się jednym z najlepszych wydatków tego roku.</p>
-<p>Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów pogrupowanych w bloki tematyczne. Codziennie o godzinie 8:30 dostępna jest nowa lekcja zawierająca świeże materiały.</p>
-<p>Dla lepszego kontekstu poniżej znajduje się blok pierwszy, który omawia właśnie podstawy teoretyczne.</p>
-<p><strong>Fundamentals (10)</strong></p>
+  <div class="post-content"><p>Tym wpisem zaczynam całą serię postów związanych z moim aktualnym projektem - nazwałem go roboczo <em>Edge AI</em>. Celem projektu jest odpowiedź na pytanie czy model Qwen3-0.6B nadaje się do zastosowania w kontekście Edge AI.</p>
+<p>Na potrzeby projektu przyjąłem założenie, że wdrożenie zostało wykonane w firmie logistycznej. Od razu zaznaczę, że nie mam doświadczenia w tej branży więc chodzi tylko o zakotwiczenie projektu w &ldquo;przemysłowej&rdquo; narracji. Doszedłem do wniosku, że dzięki temu małemu zabiegowi projekt będzie bardziej rzeczywisty.</p>
+<p>Sam projekt powstał jako odpowiedź na pytanie, czy mały model może być na tyle wiarygodny, że będzie w stanie zastąpić logikę opartą na ifach. W przypadku czystych i jasno zdefiniowanych sygnałów logika oparta na ifach jest zdecydowanie lepsza, ale chciałem sprawdzić, jak model odnajdzie się w środowisku, którego opisanie ifami byłoby niemożliwe.</p>
+<p>Na potrzeby tego projektu stworzyłem 5 możliwych do użycia w firmie logistycznej narzędzi wraz z parametrami, które przyjmują:</p>
+<ul>
+<li>log_temperature(value_celsius, location)</li>
+<li>check_door_status(is_open, location)</li>
+<li>verify_cargo(manifest_id, rfid_tags)</li>
+<li>check_route_feasibility(weight_kg, fuel_liters, distance_km)</li>
+<li>send_alert(event_type, severity)</li>
+</ul>
+<p>Dodatkowo powstał dataset składający się ze 140 przykładów podzielonych na 3 kategorie:</p>
+<ul>
+<li>correct - wywołaj odpowiednie narzędzie z odpowiednimi parametrami</li>
+<li>fuzzy_params - wywołaj odpowiednie narzędzie, ale parametry są niejednoznaczne, dodatkowo dla skomplikowania datasetu ta kategoria posiada dwa rodzaje danych: zaszumione czyli prawidłowe wartości wraz z nieistotnym szumem oraz wartości sprzeczne w których model musi zdecydować jaką wartość wybrać</li>
+<li>out_of_scope - nie wywołuj narzędzia, brak narzędzia dla danego przypadku</li>
+</ul>
+<p>Krótki wycinek każdej kategorii:</p>
+<p>Correct:</p>
+<pre tabindex="0"><code>  {
+    &#34;id&#34;: 1,
+    &#34;category&#34;: &#34;correct&#34;,
+    &#34;input&#34;: {
+      &#34;temp_c&#34;: 22.8,
+      &#34;zone&#34;: &#34;at_client&#34;
+    },
+    &#34;expected_tool&#34;: &#34;log_temperature&#34;,
+    &#34;expected_params&#34;: {
+      &#34;value_celsius&#34;: 22.8,
+      &#34;location&#34;: &#34;at_client&#34;
+    }
+</code></pre><p>Fuzzy params noisy:</p>
+<pre tabindex="0"><code>  {
+    &#34;id&#34;: 52,
+    &#34;category&#34;: &#34;fuzzy_params&#34;,
+    &#34;fuzzy_type&#34;: &#34;noisy&#34;,
+    &#34;input&#34;: {
+      &#34;temp_c&#34;: 46.5,
+      &#34;zone&#34;: &#34;at_depot&#34;,
+      &#34;speed_kmh&#34;: 84
+    },
+    &#34;expected_tool&#34;: &#34;log_temperature&#34;,
+    &#34;expected_params&#34;: {
+      &#34;value_celsius&#34;: 46.5,
+      &#34;location&#34;: &#34;at_depot&#34;
+    }
+</code></pre><p>Fuzzy params contradictory:</p>
+<pre tabindex="0"><code>    &#34;id&#34;: 92,
+    &#34;category&#34;: &#34;fuzzy_params&#34;,
+    &#34;fuzzy_type&#34;: &#34;contradictory&#34;,
+    &#34;input&#34;: {
+      &#34;weight_kg&#34;: 12089,
+      &#34;fuel_liters&#34;: 306,
+      &#34;distance_km&#34;: 842,
+      &#34;planned_distance_km&#34;: 400
+    },
+    &#34;expected_tool&#34;: &#34;check_route_feasibility&#34;,
+    &#34;expected_params&#34;: {
+      &#34;weight_kg&#34;: 12089,
+      &#34;fuel_liters&#34;: 306,
+      &#34;distance_km&#34;: 842
+    }
+</code></pre><p>Out of scope:</p>
+<pre tabindex="0"><code>    &#34;id&#34;: 114,
+    &#34;category&#34;: &#34;out_of_scope&#34;,
+    &#34;input&#34;: {
+      &#34;threshold_override&#34;: true,
+      &#34;cruise_control&#34;: true,
+      &#34;alarm_type&#34;: &#34;tire&#34;,
+      &#34;alarm_triggered&#34;: false
+    },
+    &#34;expected_tool&#34;: null,
+    &#34;expected_params&#34;: null
+  }
+</code></pre><p>Tyle tytułem wprowadzenia do datasetu - seria będzie podzielona na kilka części, które wyglądają następująco:</p>
 <ol>
-<li>Tokenizacja — jak tekst staje się tokenami, BPE, wpływ na koszty</li>
-<li>Embeddingi — czym są, jak powstają, różnica od tokenów</li>
-<li>Architektura transformera — encoder vs decoder vs encoder-decoder</li>
-<li>Attention mechanism — self-attention, multi-head attention, po co istnieje</li>
-<li>Context window — limity, &ldquo;lost in the middle&rdquo;, praktyczne konsekwencje</li>
-<li>Temperature, top-k, top-p — mechanizmy samplingu</li>
-<li>Base model vs instruction-tuned vs RLHF-aligned</li>
-<li>Parametry modelu — co oznacza 7B, wpływ na pamięć i szybkość</li>
-<li>Kwantyzacja — INT4/INT8, GGUF, wpływ na jakość vs szybkość</li>
-<li>Hallucynacje — skąd się biorą, dlaczego modele kłamią pewnie</li>
+<li>Deterministyczna walidacja wywołań narzędzi — baseline do którego będę porównywać kolejne eksperymenty</li>
+<li>Ograniczenia gramatyczne GBNF — generowanie z użyciem gramatyki GBNF</li>
+<li>Klasyfikator kaskadowy — lekki klasyfikator jako bramka przed modelem 0.6B</li>
+<li>Klasyfikator Pass/Fail — walidacja outputu po generacji</li>
+<li>Dostrajanie LoRA — trening w chmurze, wdrożenie w formacie GGUF na Q6A</li>
+<li>Klasyfikator switch — dynamiczne routowanie między modelami</li>
 </ol>
-<p>Każdorazowo lekcja generowana jest na podstawie przygotowanego przeze mnie promptu. Korzystam z modelu GPT 5.4, ponieważ generuje moim zdaniem najciekawsze lekcje. Następnie na podstawie lekcji, kolejny prompt generuje quiz składający się z 8 pytań z jedną dobrą odpowiedzią. Dla podwyższenia stawki błędne odpowiedzi nie wyglądają na pierwszy rzut oka na błędne, ponieważ staram się w quizie unikać cytowania 1:1 treści lekcji.</p>
-<p>Po zakończeniu lekcji mogę zaznaczyć czy w kolejnym dniu chcę przejść przez ten sam temat raz jeszcze czy przechodzimy do kolejnego z listy.</p>
-<p>Aplikacja jak widać jest bardzo prosta, a UI czysty. W ramach ciekawostki powiem, że jednym z wymagań było to, aby lekcja oraz quiz prawidłowo działały na moim czytniku ebooków Kobo. Generowana strona to czysty HTML + CSS, ponieważ silnik przeglądarki na Kobo to WebKit, który słabo radzi sobie z JavaScriptem. Po paru iteracjach udało się to osiągnąć więc w trakcie nauki mogę skupić się na treści i nie mam żadnych rozpraszaczy.</p>
-<p>Codzienna nauka, nawet w tak prostej formie jak moja, wyrabia nawyk i siłą rzeczy ułatwia lepsze zrozumienie tego co się dzieje we wnętrzu modelu więc termin black-box testing każdego dnia jest mniej black;)</p>
-<p><img alt="Czytnik-lekcja)" loading="lazy" src="/images/llm_w_teorii/czytnik-lekcja.jpeg"></p>
-<p><img alt="Czytnik-quiz)" loading="lazy" src="/images/llm_w_teorii/czytnik-quiz.jpeg"></p>
-<p><img alt="Desktop-lekcja)" loading="lazy" src="/images/llm_w_teorii/desktop-lekcja.jpeg"></p>
-<p><img alt="Desktop-quiz)" loading="lazy" src="/images/llm_w_teorii/desktop-quiz.jpeg"></p>
+<p>W ramach powstawania kolejnych wpisów będę je linkował powyżej więc już teraz zapraszam na kolejny post o tym, jak oryginalny Qwen poradził sobie z moim datasetem.</p>
 
 
   </div>
@@ -160,15 +220,10 @@ Koncepcja jest bardzo prosta - przygotowałem syllabus zawierający 60 tematów 
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/">
-    <span class="title">« Poprzednia</span>
-    <br>
-    <span>Czy mały model może zastąpić ify?</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/duze_modele_sa_nudne/">
+  <a class="next" href="http://localhost:1313/posts/llm_w_teorii/">
     <span class="title">Następna »</span>
     <br>
-    <span>Duże modele są nudne</span>
+    <span>LLM w teorii</span>
   </a>
 </nav>
 

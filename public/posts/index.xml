@@ -6,8 +6,16 @@
     <description>Recent content in Posts on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Wed, 20 May 2026 14:10:19 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2026 14:22:30 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Czy mały model może zastąpić ify?</title>
+      <link>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/</link>
+      <pubDate>Sun, 24 May 2026 14:22:30 +0200</pubDate>
+      <guid>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/</guid>
+      <description>&lt;p&gt;Tym wpisem zaczynam całą serię postów związanych z moim aktualnym projektem - nazwałem go roboczo &lt;em&gt;Edge AI&lt;/em&gt;. Celem projektu jest odpowiedź na pytanie czy model Qwen3-0.6B nadaje się do zastosowania w kontekście Edge AI.&lt;/p&gt;
+&lt;p&gt;Na potrzeby projektu przyjąłem założenie, że wdrożenie zostało wykonane w firmie logistycznej. Od razu zaznaczę, że nie mam doświadczenia w tej branży więc chodzi tylko o zakotwiczenie projektu w &amp;ldquo;przemysłowej&amp;rdquo; narracji. Doszedłem do wniosku, że dzięki temu małemu zabiegowi projekt będzie bardziej rzeczywisty.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LLM w teorii</title>
       <link>http://localhost:1313/posts/llm_w_teorii/</link>
