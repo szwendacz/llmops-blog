@@ -108,7 +108,10 @@ Początkowe ustawienia llama.cpp wykorzystywały wszystkie rdzenie w trakcie gen
 
 Muszę przyznać, że każdy problem, który napotkałem to kopalnia nowych informacji o których nie miałem wcześniej zielonego pojęcia. Gdybym miał powiedzieć co jest największą zaletą mojego projektu to nie będzie to wcale sam asystent, ale droga i trudności, które napotykam w trakcie pracy nad nim. Dodatkowo dla kogoś kto na co dzień pracuje tylko i wyłącznie z oprogramowaniem aspekt posiadania fizycznego urządzenia jest bardzo przyjemną odskocznią. 
 
+## Zobacz też
 
+- [Czy mały model może zastąpić ify?](/posts/czy_maly_model_moze_zastapic_ify/)
+- [Duże modele są nudne](/posts/duze_modele_sa_nudne/)
 
 
 

@@ -94,4 +94,7 @@ A jak to wygląda w praktyce? Do tej pory wiedziałem, że jestem w stanie kontr
 Nie ukrywam, że bardzo dobrze. Czasem zdarzają się potknięcia w przypadku wywołania web_search, ale liczba błędów jest mała. Najważniejsze jest dla mnie to, że praktycznie całość logiki stojącej za wywoływaniem narzędzi jest zlokalizowana lokalnie na płytce. 
 Z praktycznego punktu widzenia ta zmiana nie miała sensu, ponieważ przy mojej liczbie narzędzi mogłem skorzystać z dużego modelu i miałbym 100% pewność, że każde wywołanie będzie prawidłowe. Podkreślałem to już pewnie parę razy, ale dalej będę to robić - ten projekt nie musi być sensowny. Jego głównym celem jest nauka i zmiana flow idealnie wpisała się w to założenie. 
 
+## Zobacz też
 
+- [Asystent od środka](/posts/asystent_od_srodka/)
+- [Jaki model, wariacie?](/posts/jaki_model_wariacie/)

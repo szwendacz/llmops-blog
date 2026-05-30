@@ -22,3 +22,8 @@ Co mogło pójść nie tak? W skrócie: dokładnie to samo co w PicoClaw. Asyste
 W tym momencie byłem już naprawdę blisko porzucenia swojego pomysłu z pogodą, ale spojrzałem na ciągle uruchomioną malinkę i zadałem sobie proste pytanie: czy tak trudno będzie napisać własnego asystenta? Nie będę nikogo trzymać w napięciu — okazało się, że nie.
 
 Z pomocą Claude Code i Pythona stworzyłem własnego asystenta, który jest ubogim krewnym bardziej popularnych projektów. Nie mam możliwości dodawania nowych umiejętności z marketplace, ale wszystkie potrzebne funkcje działają bez żadnego problemu. Co najważniejsze — w końcu codziennie rano o godzinie 6 dostaję podsumowanie pogody. To wszystko działa na Raspberry Pi Zero 2W. W gruncie rzeczy powinienem powiedzieć, że działało — bo od wczoraj (tj. 08.04.2026) mam już nową płytkę SBC, po której obiecuję sobie naprawdę wiele. O szczegółach i funkcjonalności mojego asystenta opowiem w kolejnym poście.
+
+## Zobacz też
+
+- [LLM w teorii](/posts/llm_w_teorii/)
+- [Asystent od środka](/posts/asystent_od_srodka/)

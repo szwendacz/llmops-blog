@@ -105,3 +105,8 @@ Tyle tytułem wprowadzenia do datasetu - seria będzie podzielona na kilka czę�
 6. Klasyfikator switch — dynamiczne routowanie między modelami	
 
 W ramach powstawania kolejnych wpisów będę je linkował powyżej więc już teraz zapraszam na kolejny post o tym, jak oryginalny Qwen poradził sobie z moim datasetem.
+
+## Zobacz też
+
+- [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)
+- [Jaki model, wariacie?](/posts/jaki_model_wariacie/)

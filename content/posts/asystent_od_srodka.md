@@ -50,3 +50,8 @@ To czego nie ma w powyższym opisie to informacja, że cała sesja jest logowana
 Uważny czytelnik pewnie zauważy, że do funkcji *get_weather* nie jest dołączany argument z informacją na temat miasta dla którego ma być pobrana pogoda. Przyznam, że poszedłem tu na łatwiznę i nazwa jest zahardkodowana w funkcji. Nie sprawdzam pogody dla innych miasta więc taki wybór wydawał mi się naturalny.
 
 Na dzisiaj to tyle. W kolejnym poście w końcu przejdziemy do, moim skromnym zdaniem, dużo ciekawszej części związanej z samą płytką oraz małymi modelami, które jak się okazuje mają swoje niespodzianki.
+
+## Zobacz też
+
+- [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)
+- [Zmiana flow](/posts/zmiana_flow/)

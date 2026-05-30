@@ -31,3 +31,8 @@ Pamiętam jak w tamtym roku po premierze Claude 3.7 mój były szef nie był w s
 Zdaje sobie sprawę z tego, że nowe modele są odpowiedzią na rozwój agentów, ale nie mogę pozbyć się wrażenia, że nie wykorzystujemy w pełni tego co już mamy tylko wymyślamy koło od nowa. Oczywiście jestem świadomy tego, że to przypomina trochę gonienie króliczka i akcjonariusze spodziewają się pewnie ciągle nowych i lepszych modeli, ale osobiście mam o wiele większą satysfakcję z pracy z małym modelem. Taki model wymusza dyscyplinę i dokładne zaplanowanie tego co chce się z nim zrobić i jakie efekty chce się osiągnąć w przeciwieństwie do dużego modelu, który może praktycznie wszystko. Nie namawiam nikogo do porzucenia top-tier modeli, ale zachęcam do spojrzenia na to co się dzieje też na samym dole stawki.
 
 PS Jeśli tak ma wyglądać [przyszłość](https://x.com/harrisonfjobe/status/2056813108061220984), to ja dziękuję. 
+
+## Zobacz też
+
+- [LLM w teorii](/posts/llm_w_teorii/)
+- [Jaki model, wariacie?](/posts/jaki_model_wariacie/)

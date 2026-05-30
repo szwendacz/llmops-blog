@@ -40,3 +40,8 @@ Pierwsze zaskoczenie przyszło dosyć szybko, ponieważ okazało się, że płyt
 Sama konfiguracja asystenta była dosyć prosta. Do płytki łączę się przez SSH. Repozytorium jest hostowane na GitHubie. Dzięki użyciu Tailscale i GitHub Actions zmiany po pushu przechodzą przez testy i wykonywany jest deploy bezpośrednio na płytkę. Czysto i elegancko.
 
 Na koniec warto odpowiedzieć sobie na pytanie, czy nowa płytka przyspieszyła działanie asystenta. Po konfiguracji nie odłączyłem od prądu Raspberry Pi i wysłałem zapytanie przez Telegram. Otrzymałem dwie odpowiedzi — pierwsza przyszła po kilku sekundach, druga po kilkunastu. 620 zł. Było warto.
+
+## Zobacz też
+
+- [Czy mały model może zastąpić ify?](/posts/czy_maly_model_moze_zastapic_ify/)
+- [Jaki model, wariacie?](/posts/jaki_model_wariacie/)

@@ -37,3 +37,8 @@ Codzienna nauka, nawet w tak prostej formie jak moja, wyrabia nawyk i siłą rze
 ![Desktop-lekcja)](/images/llm_w_teorii/desktop-lekcja.jpeg)
 
 ![Desktop-quiz)](/images/llm_w_teorii/desktop-quiz.jpeg)
+
+## Zobacz też
+
+- [Duże modele są nudne](/posts/duze_modele_sa_nudne/)
+- [Czy mały model może zastąpić ify?](/posts/czy_maly_model_moze_zastapic_ify/)
