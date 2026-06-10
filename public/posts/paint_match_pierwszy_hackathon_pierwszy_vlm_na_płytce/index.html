@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Paint Match: pierwszy hakaton, pierwszy VLM na płytce | LLMOps</title>
+<meta name="keywords" content="">
+<meta name="description" content="Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach EDGE AI, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu Build Small Hackathon. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!
+Skąd pomysł?
+Mając kilkanaście lat, uwielbiałem grę Airfix Dogfighter stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/paint_match_pierwszy_hackathon_pierwszy_vlm_na_p%C5%82ytce/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/paint_match_pierwszy_hackathon_pierwszy_vlm_na_p%C5%82ytce/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archiwum">
+                    <span>Archiwum</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Paint Match: pierwszy hakaton, pierwszy VLM na płytce
+    </h1>
+    <div class="post-meta"><span title='2026-06-09 20:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>6 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach <em>EDGE AI</em>, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu <a href="https://huggingface.co/build-small-hackathon">Build Small Hackathon</a>. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!</p>
+<h2 id="skąd-pomysł">Skąd pomysł?<a hidden class="anchor" aria-hidden="true" href="#skąd-pomysł">#</a></h2>
+<p>Mając kilkanaście lat, uwielbiałem grę <a href="https://en.wikipedia.org/wiki/Airfix_Dogfighter">Airfix Dogfighter</a> stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.</p>
+<p>[zdjecie sklejonego modelu]
+[zdjecie zestawu Airfix]</p>
+<h2 id="co-zbudowałem">Co zbudowałem?<a hidden class="anchor" aria-hidden="true" href="#co-zbudowałem">#</a></h2>
+<p>Pomimo tego, że lubię modele Airfix, to niestety nie jestem fanem ich standardowych farb Humbrol. To trochę jak z Colą i Pepsi. Każdy ma swoje własne preferencje. Ja od Humbrola wolę farby Tamiya, ale zawsze denerwuje mnie konwersja kolorów. Przykładowo: kolor srebrny z Humbrol to <em>11 Silver</em>, ale odpowiednik Tamiya to <em>X-11 Chrome Silver Gloss</em>. Dlaczego w takim razie nie ułatwić sobie życia i, automatycznie za pomocą zdjęcia lub screenshotu, konwertować kod Airfix na kod Tamiya? Dodatkowo, motywem przewodnim UI może być gra, w którą zagrywałem się za dzieciaka, i mamy gotowy motyw na hakaton - Paint Match.</p>
+<p><em>Poniżej pierwsze logo, które miało trafić do projektu.</em></p>
+<p><img alt="Pierwsze logo" loading="lazy" src="/images/airfix/logo.png"></p>
+<h2 id="jak-to-działa">Jak to działa?<a hidden class="anchor" aria-hidden="true" href="#jak-to-działa">#</a></h2>
+<p>HF Space orkiestruje całość, Radxa serwuje wyłącznie model. Aplikacja Gradio na Space przez Cloudflare Tunnel woła Radxę po inferencję, łączy wyniki z inwentarzem z Google Sheets i zwraca do UI.</p>
+<pre tabindex="0"><code>[Telefon/komputer użytkownika]
+         ↓
+[HF Space — Gradio UI + backend]
+    ↓                    ↓ (Cloudflare Tunnel)
+[Google Sheets]    [Radxa Q6A — llama-server + InternVL3.5-2B]
+ inwentarz farb           inferencja
+</code></pre><p>Inwentarz z Sheets pobierany jest raz, przy starcie Space&rsquo;a. Mógłby to być JSON w repo, ale wtedy każda zmiana wymagałaby commita i redeploy&rsquo;u - Sheets pozwala zaktualizować stan z telefonu.</p>
+<h2 id="jak-wybierałem-model">Jak wybierałem model?<a hidden class="anchor" aria-hidden="true" href="#jak-wybierałem-model">#</a></h2>
+<p>Od początku zakładałem, że projekt będzie budowany z myślą o zdobyciu odznaki &ldquo;Off the grid&rdquo;, więc wiedziałem, że muszę znaleźć model, który będzie pasował do mojej płytki developerskiej <a href="https://radxa.com/products/dragon/q6a/">Radxa Q6A</a>. Pomimo pięknej strony internetowej Radxa w moim przypadku to board CPU-only, ponieważ na systemie Armbian, którego używam, biblioteka Vulkan nie jest jeszcze wspierana. Podobnie wygląda sytuacja z modułem NPU - jest wspierany przez oficjalny system producenta Radxa OS, a liczba dostępnych modeli jest bardzo mała.</p>
+<p>W każdym razie to pierwszy raz, gdy miałem okazję przetestować na niej model wspierający wizję. Do tej pory korzystałem głównie z modeli tekstowych. Całą pracę zacząłem od researchu możliwych modeli. Finalnie na krótkiej liście znalazły się:</p>
+<ul>
+<li>moondream2-1.5B</li>
+<li>SmolVLM2-2.2B</li>
+<li>InternVL3.5-2B</li>
+<li>Gemma 4 E4B</li>
+</ul>
+<p>Uważny czytelnik od razu zauważy, że jeden model odstaje od reszty. Przyznaję, że Gemma trafiła na listę, bo była świeża i chciałem ją przetestować.</p>
+<p>Testy zostały przeprowadzone na 10 plikach podzielonych na 2 równe grupy: zdjęcia instrukcji oraz screenshoty z oficjalnego sklepu Airfix. W ramach testów zależało mi przede wszystkim na sprawdzeniu 3 aspektów: halucynacje, dokładność oraz latency. Pomimo tego, że na ogół przy benchmarkach staram się podawać konkretne liczby to tym razem nie mogę tego zrobić dla dwóch testowanych modeli. Modele <em>moondream2</em> oraz <em>SmolVLM2</em> kompletnie nie radziły sobie z odczytywaniem kodów farb. Na ogół myliły numery z kolorami lub zapętlały się w trakcie generowania odpowiedzi i produkowały halucynacje w postaci wyliczania kolejnych, następujących po sobie numerów.
+W przypadku Gemma sytuacja była zgoła odmienna, ponieważ ten model doskonale radził sobie z odczytywaniem moich przykładów, ale dopiero po tym, jak zwiększyłem timeout odpowiedzi z 300s na 600s. Uznałem, że tak wysokie latency nie jest tego warte.
+Na placu boju pozostał InternVL3.5-2B i to było moje największe zaskoczenie:</p>
+<ul>
+<li>F1 = 0.87</li>
+<li>P = 0.95 (Precision)</li>
+<li>R = 0.81 (Recall)</li>
+</ul>
+<p>Innymi słowy: model rzadko wymyśla kody, których nie ma, ale czasem nie wyłapuje wszystkich, które są.
+Niestety, z racji CPU-only na płytce, średnie latency procesowania dla wszystkich obrazów to ~194s.
+Sam czas procesowania byłby dłuższy, ale w czasie testów eksperymentowałem z resizem obrazu i wydaje mi się, że znalazłem złoty środek. Screenshoty przesyłane są w rozdzielczości 640px, ale z racji dobrej jakości tak mały rozmiar nie ma większego przełożenia na finalny output. Z kolei zdjęcia robione telefonem też początkowo były skalowane do 640px, ale ten typ obrazu jest podatny na różnego rodzaju zniekształcenia (światło, odległość od instrukcji), więc finalnie ten typ obrazu jest zmniejszany do 960px. Przy tak małym modelu takie szczegóły mają znaczenie.
+Dodatkowym problemem, którym należało się zająć był format odpowiedzi, ponieważ model bez wprowadzenia sztywnych zasad potrafił za każdym razem generować inny format outputu. Zacząłem od ograniczenia GBNF, ale przy zastosowanej temperaturze 0 model niestety się zapętlał w halucynacjach i nie potrafił wygenerować końcowego tokenu end of stream (EOS). Rozwiązaniem problemu było wdrożenie JSON schema.</p>
+<p>Na koniec tego akapitu wspomnę jeszcze o prompcie, ponieważ było to dla mnie jedno z większych zaskoczeń przy pracy z tym modelem. Finalny prompt brzmi: <strong>List every paint code visible in this image.</strong>. Nie chcę skłamać, ale jest to jeden z najkrótszych promptów jakich używam w swoich aplikacjach. Oczywiście jego długość ma swoje uzasadnienie. Dla przykładu dokładniejszy prompt <strong>List every paint code visible in this image. Output one per line, exactly as <code>- CODE: NAME</code>, and nothing else.</strong> psuł jakość outputu i wprowadzał większą randomowość w odpowiedzi modelu. Po paru próbach różnych kombinacji zostawiłem najprostszą wersję.</p>
+<h2 id="jak-to-wygląda">Jak to wygląda?<a hidden class="anchor" aria-hidden="true" href="#jak-to-wygląda">#</a></h2>
+<p>Na potrzeby hakatonu przygotowałem dwie wersje UI. Wersja pierwsza korzystała z defaultowych komponentów Gradio i wyglądała jak standardowa aplikacja Gradio: nudno.</p>
+<p><img alt="Pierwsza wersja UI" loading="lazy" src="/images/airfix/UI-v1.png"></p>
+<p>Doszedłem do wniosku, że z takim designem świata nie zawojuję, więc przygotowałem wersję drugą, która zdecydowanie bardziej oddawała klimat lat dwutysięcznych i gry Airfix Dogfighter. W tej wersji dodałem również więcej elementów oddających klimat militarny:</p>
+<ul>
+<li>Upload Document - po załadowaniu pliku zmienia się w ramkę &ldquo;Exhibit A — Recovered Document&rdquo; ze zdjęciem i pieczątką RECEIVED. Podczas analizy animowana zielona linia skanera przewija się przez dokument.</li>
+<li>Field Report - w stanie bezczynności: animowany radar. Podczas analizy: pulsujące statusy. Po zakończeniu: surowy output z modelu.</li>
+<li>Resupply Manifest - lista farb z linkami do sklepu mojehobby.pl. Posiadane farby oznaczone są zieloną etykietą ✓ ISSUED zamiast linku.</li>
+</ul>
+<p><img alt="Druga wersja UI — stan początkowy" loading="lazy" src="/images/airfix/UI-v2.png"></p>
+<p><img alt="Druga wersja UI — załadowany plik" loading="lazy" src="/images/airfix/UI-v3.png"></p>
+<p><img alt="Druga wersja UI — wyniki" loading="lazy" src="/images/airfix/UI-v4.png"></p>
+<p>Całość najlepiej sprawdzić bezpośrednio w aplikacji: <a href="https://huggingface.co/spaces/build-small-hackathon/paint_match">Paint Match HF Space</a>.
+Aplikacja jest w pełni responsywna, co jest tu kluczowe — zdjęcia instrukcji robi się głównie telefonem, prosto przy stole modelarskim.</p>
+<h2 id="co-dalej">Co dalej?<a hidden class="anchor" aria-hidden="true" href="#co-dalej">#</a></h2>
+<p>Aplikacja może być rozwijana w dwóch kierunkach. Z technicznego punktu widzenia nie ma co ukrywać: model 2B popełnia błędy, szczególnie w przypadku gorszej jakości zdjęć. Rozwiązaniem byłoby wdrożenie lepszego modelu, ale przy posiadanym hardware nie ma to sensu z powodu wysokiego latency. Sprawdziłem to już z Gemmą E4B — odpadła w testach przez latency. Najlepszym rozwiązaniem byłaby zmiana płytki oraz weryfikacja większych modeli. Bez zmiany sprzętu jedynym kierunkiem jest fine-tuning modelu w celu lepszego odczytywania kodów.</p>
+<p>Po stronie funkcjonalności warto wspomnieć o dwóch rzeczach: dodanie kolejnych producentów (Vallejo, AK, Hataka) oraz wizualne porównanie kolorów po wartościach HEX. Same nazwy potrafią mylić — Humbrol Silver i Tamiya Silver to niekoniecznie ten sam odcień, a właściwy odpowiednik kolorystyczny może nazywać się zupełnie inaczej (np. Silver Steel Matt).</p>
+<h2 id="podsumowanie">Podsumowanie<a hidden class="anchor" aria-hidden="true" href="#podsumowanie">#</a></h2>
+<p>To był mój pierwszy udział w hakatonie i żałuję, że nie zrobiłem tego wcześniej. Zaskoczyła mnie liczba decyzji, które trzeba było podjąć przy tak małym projekcie.
+Dodatkowo formuła hakatonu wymaga twardego trzymania się wcześniej ustalonych priorytetów. Wymyślanie nowych funkcjonalności jest bardzo proste, ale ich sensowne wdrożenie to już inna kwestia. Wisienką na torcie było pierwsze użycie modelu wizyjnego - czuję, że nie ostatnie.
+Czy jestem zadowolony z finalnego efektu? Jeszcze jak!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Czy mały model może zastąpić ify?</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">LLMOps</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

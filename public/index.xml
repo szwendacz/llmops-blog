@@ -6,8 +6,26 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sun, 24 May 2026 14:22:30 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 21:37:38 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Paint match: first hackathon, first VLM on a board</title>
+      <link>http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/</link>
+      <pubDate>Tue, 09 Jun 2026 21:37:38 +0200</pubDate>
+      <guid>http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/</guid>
+      <description>&lt;p&gt;I know I was supposed to describe the next experiments I&amp;rsquo;m running as part of &lt;em&gt;EDGE AI&lt;/em&gt;, but last Wednesday an email from Hugging Face landed in my inbox with news about the &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!&lt;/p&gt;
+&lt;h2 id=&#34;where-did-the-idea-come-from&#34;&gt;Where did the idea come from?&lt;/h2&gt;
+&lt;p&gt;As a teenager, I loved the game &lt;a href=&#34;https://en.wikipedia.org/wiki/Airfix_Dogfighter&#34;&gt;Airfix Dogfighter&lt;/a&gt;, created by the Swedish studios Unique Development Studios and Paradox Entertainment under an Airfix license. 26 years after the game&amp;rsquo;s release, I&amp;rsquo;m still closely tied to the Airfix brand, because it&amp;rsquo;s one of my favorite model kit manufacturers. Yes, I&amp;rsquo;m a scale modeler. I love building plastic kits, because it&amp;rsquo;s a perfect escape from the computer. Plus, it&amp;rsquo;s nice to see the physical results of your work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Paint match: pierwszy hakaton, pierwszy VLM na płytce</title>
+      <link>http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/</link>
+      <pubDate>Tue, 09 Jun 2026 20:37:38 +0200</pubDate>
+      <guid>http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/</guid>
+      <description>&lt;p&gt;Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach &lt;em&gt;EDGE AI&lt;/em&gt;, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!&lt;/p&gt;
+&lt;h2 id=&#34;skąd-pomysł&#34;&gt;Skąd pomysł?&lt;/h2&gt;
+&lt;p&gt;Mając kilkanaście lat, uwielbiałem grę &lt;a href=&#34;https://en.wikipedia.org/wiki/Airfix_Dogfighter&#34;&gt;Airfix Dogfighter&lt;/a&gt; stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Czy mały model może zastąpić ify?</title>
       <link>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify/</link>
