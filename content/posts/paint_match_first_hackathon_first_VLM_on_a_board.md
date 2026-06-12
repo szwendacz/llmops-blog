@@ -4,6 +4,8 @@ draft = false
 title = '[EN] Paint match: first hackathon, first VLM on a board'
 +++
 
+> A quick note before you start: I wrote this post during the hackathon, before fine-tuning the model. The current production state (with a new model) is described in the **Update** section at the end.
+
 I know I was supposed to describe the next experiments I'm running as part of *EDGE AI*, but last Wednesday an email from Hugging Face landed in my inbox with news about the [Build Small Hackathon](https://huggingface.co/build-small-hackathon). I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!
 
 ## Where did the idea come from?
@@ -98,3 +100,22 @@ On the functionality side, two things are worth mentioning: adding more manufact
 This was my first time taking part in a hackathon, and I regret not doing it sooner. I was surprised by the number of decisions that had to be made for such a small project.
 On top of that, the hackathon format forces you to stick hard to previously set priorities. Coming up with new features is very easy, but implementing them sensibly is a different story. The cherry on top was using a vision model for the first time — and I have a feeling it won't be the last.
 Am I happy with the final result? You bet!
+
+## Update: fine-tuning and a sponsor prize pool
+
+I wrapped up the required hackathon steps faster than I expected, so a few days were left before the deadline, which I used for two additional things: fine-tuning (a separate badge) and swapping the base model for MiniCPM-V-4.6 (a separate sponsor prize pool) — which is now running in production on the Radxa.
+
+MiniCPM-V-4.6 is a 1B model in a hybrid Qwen3.5-Mamba architecture — lighter than InternVL3.5-2B and with a better F1 even before fine-tuning on my benchmark (0.920 vs. 0.87). The fine-tuning itself was LoRA on Modal.com with an H100, 16 minutes of training and a few dollars. The training set was 391 examples (242 from Airfix store screenshots + 192 from paper instructions after augmentation), with test sets kept separate.
+
+**Results (after fine-tuning):**
+
+| Set | F1 |
+|---|---|
+| Benchmark, 10 images | 0.935 (up from 0.920) |
+| HF Space examples (4 images) | 1.000 |
+| Shop test set (53 images) | 0.927 |
+| Paper instructions test set (7 images) | 0.928 |
+
+Latency on the Radxa dropped from ~194s to ~60s — three times faster than the previous model.
+
+There's one image the model still gets wrong: a Chinook, where decal numbers in red squares look visually identical to paint codes. Acceptable for a 1B model, but a clear weakness to address next.

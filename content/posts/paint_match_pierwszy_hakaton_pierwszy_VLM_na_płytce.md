@@ -4,6 +4,8 @@ draft = false
 title = 'Paint match: pierwszy hakaton, pierwszy VLM na płytce'
 +++
 
+> Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji **Aktualizacja** na końcu.
+
 Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach *EDGE AI*, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu [Build Small Hackathon](https://huggingface.co/build-small-hackathon). Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię! 
 
 ## Skąd pomysł?
@@ -99,7 +101,24 @@ To był mój pierwszy udział w hakatonie i żałuję, że nie zrobiłem tego wc
 Dodatkowo formuła hakatonu wymaga twardego trzymania się wcześniej ustalonych priorytetów. Wymyślanie nowych funkcjonalności jest bardzo proste, ale ich sensowne wdrożenie to już inna kwestia. Wisienką na torcie było pierwsze użycie modelu wizyjnego - czuję, że nie ostatnie.
 Czy jestem zadowolony z finalnego efektu? Jeszcze jak! 
 
+## Aktualizacja: fine-tuning i sponsorska pula nagród
 
+Wymagane kroki hakatonu dopiąłem szybciej niż myślałem, więc do terminu zostało parę dni, które wykorzystałem na dwie dodatkowe rzeczy: fine-tuning (osobna odznaka) i wymianę bazowego modelu na MiniCPM-V-4.6 (osobna pula nagród sponsora) — który teraz siedzi w produkcji na Radxie.
+
+MiniCPM-V-4.6 to model 1B w hybrydowej architekturze Qwen3.5-Mamba — lżejszy niż InternVL3.5-2B i z lepszym F1 jeszcze przed fine-tuningiem na moim benchmarku (0.920 vs. 0.87). Sam fine-tuning to LoRA na Modal.com z H100, 16 minut treningu i kilka dolarów, które poszły z puli którą dostawał każdy uczestnik hakatonu. Zbiór treningowy to 391 przykładów (242 ze screenshotów sklepu Airfix + 192 z papierowych instrukcji po augmentacji), zbiory testowe trzymane osobno.
+
+**Wyniki (po fine-tuningu):**
+
+| Zbiór | F1 |
+|---|---|
+| Benchmark 10 obrazków | 0.935 (wcześniej 0.920) |
+| Przykłady z HF Space (4 obrazki) | 1.000 |
+| Zbiór testowy ze sklepu (53 obrazki) | 0.927 |
+| Zbiór testowy z papierowych instrukcji (7 obrazków) | 0.928 |
+
+Co najlepsze, latency na Radxie spadło z ~194s do ~60s - trzy razy szybciej niż poprzedni model.
+
+Jest jedno zdjęcie, które model dalej powoduje błędy ekstrakcji: Chinook, na którym numery kalek w czerwonych kwadratach wyglądają identycznie jak kody farb. Biorąc pod uwage ogólny score dla tak małego modelu oraz dużą poprawę latency uznałem, że jest to akceptowalny koszt. 
 
 
 
