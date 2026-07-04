@@ -6,25 +6,47 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Tue, 09 Jun 2026 21:37:38 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 14:05:00 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Czy maly model moze zastapic ify? Część druga</title>
+      <link>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</link>
+      <pubDate>Sat, 04 Jul 2026 14:05:00 +0200</pubDate>
+      <guid>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</guid>
+      <description>&lt;p&gt;Powinienem napisać tego posta dawno temu, ale nie mogłem się do niego zebrać ponieważ uznałem, że to będzie ostatni post z serii, która początkowo miała liczyć sześć wpisów. Już wyjaśniam skąd taka decyzja.&lt;/p&gt;
+&lt;p&gt;Dla przypomnienia - mój eksperyment polegał na sprawdzeniu jak mały model poradzi sobie w podejściu edge AI w kontekście interpretacji docierających sygnałów i wyborze odpowiedniego toola. &lt;a href=&#34;https://llmops.pl/posts/czy_maly_model_moze_zastapic_ify/&#34;&gt;Tutaj&lt;/a&gt; można poczytać więcej o założeniach.&lt;/p&gt;
+&lt;p&gt;Punktem wyjścia dla wszystkich eksperymentów była weryfikacja modelu bazowego, aby mieć punkt odniesienia. Tak jak widać poniżej, model bez żadnych modyfikacji radzi sobie bardzo przyzwoicie osiagając prawie 80% w obydwu kategoriach. Dla przypomnienia używam Qwena w rozmiarze 0.6B.
+Model miał ustawioną flagę /no_think, temperatura wynosiła 0, a średnie latency na jedno zapytanie to ~4s.
+Dodatkowo w trakcie testu modelu bazowego zweryfikowałem również opcje z włączonym reasoningiem, ale zysk wzrósł o 3 punkty procentowe przy latency, które zwiększyło się do ~29s. Tak mała różnica w wyniku nie usprawiedliwiała tak dużej różnicy w prędkości.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Po hakatonie: wnioski na gorąco</title>
+      <link>http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/</link>
+      <pubDate>Sat, 13 Jun 2026 12:35:56 +0200</pubDate>
+      <guid>http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/</guid>
+      <description>&lt;p&gt;To jest wpis dla mnie z przyszłości. Chciałbym na gorąco spisać wnioski po hakatonie.&lt;/p&gt;
+&lt;h2 id=&#34;1&#34;&gt;1.&lt;/h2&gt;
+&lt;p&gt;To nie będzie nic odkrywczego, ale najważniejszy na hakatonie jest pomysł, którego nie robi się na siłę. &lt;em&gt;Paint Match&lt;/em&gt; nie jest nowym lub odkrywczym produktem, ale dzięki temu, że sam sklejam modele i w dzieciństwie uwielbiałem grać w Airfix Dogfighter, to praca nad nim była przyjemnością. To bardzo pomaga w motywacji do dalszej pracy. Zdaję sobie sprawę, że nie zawsze da się powiązać pomysł z hobby, więc niech to, nad czym pracujesz, będzie dla Ciebie interesujące. Nie ma nic gorszego niż praca na siłę.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[EN] Paint match: first hackathon, first VLM on a board</title>
       <link>http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/</link>
       <pubDate>Tue, 09 Jun 2026 21:37:38 +0200</pubDate>
       <guid>http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/</guid>
-      <description>&lt;p&gt;I know I was supposed to describe the next experiments I&amp;rsquo;m running as part of &lt;em&gt;EDGE AI&lt;/em&gt;, but last Wednesday an email from Hugging Face landed in my inbox with news about the &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!&lt;/p&gt;
-&lt;h2 id=&#34;where-did-the-idea-come-from&#34;&gt;Where did the idea come from?&lt;/h2&gt;
-&lt;p&gt;As a teenager, I loved the game &lt;a href=&#34;https://en.wikipedia.org/wiki/Airfix_Dogfighter&#34;&gt;Airfix Dogfighter&lt;/a&gt;, created by the Swedish studios Unique Development Studios and Paradox Entertainment under an Airfix license. 26 years after the game&amp;rsquo;s release, I&amp;rsquo;m still closely tied to the Airfix brand, because it&amp;rsquo;s one of my favorite model kit manufacturers. Yes, I&amp;rsquo;m a scale modeler. I love building plastic kits, because it&amp;rsquo;s a perfect escape from the computer. Plus, it&amp;rsquo;s nice to see the physical results of your work.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;A quick note before you start: I wrote this post during the hackathon, before fine-tuning the model. The current production state (with a new model) is described in the &lt;strong&gt;Update&lt;/strong&gt; section at the end.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I know I was supposed to describe the next experiments I&amp;rsquo;m running as part of &lt;em&gt;EDGE AI&lt;/em&gt;, but last Wednesday an email from Hugging Face landed in my inbox with news about the &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Paint match: pierwszy hakaton, pierwszy VLM na płytce</title>
       <link>http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/</link>
       <pubDate>Tue, 09 Jun 2026 20:37:38 +0200</pubDate>
       <guid>http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/</guid>
-      <description>&lt;p&gt;Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach &lt;em&gt;EDGE AI&lt;/em&gt;, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!&lt;/p&gt;
-&lt;h2 id=&#34;skąd-pomysł&#34;&gt;Skąd pomysł?&lt;/h2&gt;
-&lt;p&gt;Mając kilkanaście lat, uwielbiałem grę &lt;a href=&#34;https://en.wikipedia.org/wiki/Airfix_Dogfighter&#34;&gt;Airfix Dogfighter&lt;/a&gt; stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji &lt;strong&gt;Aktualizacja&lt;/strong&gt; na końcu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach &lt;em&gt;EDGE AI&lt;/em&gt;, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu &lt;a href=&#34;https://huggingface.co/build-small-hackathon&#34;&gt;Build Small Hackathon&lt;/a&gt;. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!&lt;/p&gt;</description>
     </item>
     <item>
       <title>Czy mały model może zastąpić ify?</title>

@@ -37,3 +37,9 @@ Na koniec podtrzymuję to, co mówię od dawna. Małe modele są wolne, kapryśn
 ## Plan na następny projekt 
 
 Konkretne zadanie na najbliższą przyszłość: lepiej poznać Claude Code oraz zorganizować sensowniejszy system przechowywania informacji w kolejnym projekcie. 
+
+
+## Zobacz też
+
+- [Paint Match — pierwszy hakaton](/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_płytce/)
+- [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)

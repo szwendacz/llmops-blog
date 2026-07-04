@@ -119,3 +119,8 @@ MiniCPM-V-4.6 is a 1B model in a hybrid Qwen3.5-Mamba architecture — lighter t
 Latency on the Radxa dropped from ~194s to ~60s — three times faster than the previous model.
 
 There's one image the model still gets wrong: a Chinook, where decal numbers in red squares look visually identical to paint codes. Acceptable for a 1B model, but a clear weakness to address next.
+
+## See also
+
+- [Paint Match — polski opis](/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_płytce/)
+- [Po hakatonie — wnioski na gorąco](/posts/po_hakatonie_wnioski_na_goraco/)

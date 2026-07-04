@@ -45,3 +45,9 @@ Po zobaczeniu podsumowania tego eksperymentu, a w szczególności liczby request
 Po głębszym zastanowieniu doszedłem do wniosku, że dalsze kontynuowanie tego projektu w obecnej formie nie ma sensu — nie dlatego, że eksperyment się nie udał, tylko dlatego, że udał się zbyt dobrze. Udowodniłem, że kaskada reguł i klasyfikatora TF-IDF załatwia niemal cały ruch, a mały model językowy jest potrzebny tylko jako ostateczne zabezpieczenie na pojedyncze przypadki. To zamyka problem, który sobie postawiłem na starcie, tylko że odpowiedź jest inna niż się spodziewałem: mały LLM rozwiązuje problem mniejszej skali, niż początkowo zakładałem. Mógłbym sprawdzić pozostałe metody z listy, ale przyznam szczerze, że straciłem do tego motywację — lubię robić coś, co przynajmniej w teorii ma praktyczne zastosowanie, a tutaj ta pewność mi się rozmyła.
 Wydaje mi się, że moim kluczowym wnioskiem na przyszłość jest to, że przed wyborem narzędzia należy zadać sobie pytanie, czy jest ono odpowiednie do skali problemu.
 
+
+## Zobacz też
+
+- [Czy mały model może zastąpić ify? — część pierwsza](/posts/czy_maly_model_moze_zastapic_ify/)
+- [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)
+

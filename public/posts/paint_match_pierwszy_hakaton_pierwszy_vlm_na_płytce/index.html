@@ -7,9 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Paint match: pierwszy hakaton, pierwszy VLM na płytce | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach EDGE AI, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu Build Small Hackathon. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!
-Skąd pomysł?
-Mając kilkanaście lat, uwielbiałem grę Airfix Dogfighter stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.">
+<meta name="description" content="
+Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji Aktualizacja na końcu.
+
+Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach EDGE AI, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu Build Small Hackathon. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
@@ -125,11 +126,14 @@ Mając kilkanaście lat, uwielbiałem grę Airfix Dogfighter stworzoną przez sz
     <h1 class="post-title entry-hint-parent">
       Paint match: pierwszy hakaton, pierwszy VLM na płytce
     </h1>
-    <div class="post-meta"><span title='2026-06-09 20:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>6 min</span>
+    <div class="post-meta"><span title='2026-06-09 20:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>7 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach <em>EDGE AI</em>, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu <a href="https://huggingface.co/build-small-hackathon">Build Small Hackathon</a>. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!</p>
+  <div class="post-content"><blockquote>
+<p>Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji <strong>Aktualizacja</strong> na końcu.</p>
+</blockquote>
+<p>Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach <em>EDGE AI</em>, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu <a href="https://huggingface.co/build-small-hackathon">Build Small Hackathon</a>. Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię!</p>
 <h2 id="skąd-pomysł">Skąd pomysł?<a hidden class="anchor" aria-hidden="true" href="#skąd-pomysł">#</a></h2>
 <p>Mając kilkanaście lat, uwielbiałem grę <a href="https://en.wikipedia.org/wiki/Airfix_Dogfighter">Airfix Dogfighter</a> stworzoną przez szwedzkie studia Unique Development Studios i Paradox Entertainment na licencji firmy Airfix. 26 lat po premierze gry dalej jestem blisko związany z firmą Airfix, ponieważ to jeden z moich ulubionych producentów modeli. Tak, jestem modelarzem. Uwielbiam sklejać modele plastikowe, ponieważ to doskonała odskocznia od komputera. Dodatkowo miło zobaczyć fizyczne efekty swojej pracy.</p>
 <p><img alt="Zestaw Airfix" loading="lazy" src="/images/airfix/airfix-pudelko.JPG"></p>
@@ -191,6 +195,38 @@ Aplikacja jest w pełni responsywna, co jest tu kluczowe - zdjęcia instrukcji r
 <p>To był mój pierwszy udział w hakatonie i żałuję, że nie zrobiłem tego wcześniej. Zaskoczyła mnie liczba decyzji, które trzeba było podjąć przy tak małym projekcie.
 Dodatkowo formuła hakatonu wymaga twardego trzymania się wcześniej ustalonych priorytetów. Wymyślanie nowych funkcjonalności jest bardzo proste, ale ich sensowne wdrożenie to już inna kwestia. Wisienką na torcie było pierwsze użycie modelu wizyjnego - czuję, że nie ostatnie.
 Czy jestem zadowolony z finalnego efektu? Jeszcze jak!</p>
+<h2 id="aktualizacja-fine-tuning-i-sponsorska-pula-nagród">Aktualizacja: fine-tuning i sponsorska pula nagród<a hidden class="anchor" aria-hidden="true" href="#aktualizacja-fine-tuning-i-sponsorska-pula-nagród">#</a></h2>
+<p>Wymagane kroki hakatonu dopiąłem szybciej niż myślałem, więc do terminu zostało parę dni, które wykorzystałem na dwie dodatkowe rzeczy: fine-tuning (osobna odznaka) i wymianę bazowego modelu na MiniCPM-V-4.6 (osobna pula nagród sponsora) — który teraz siedzi w produkcji na Radxie.</p>
+<p>MiniCPM-V-4.6 to model 1B w hybrydowej architekturze Qwen3.5-Mamba — lżejszy niż InternVL3.5-2B i z lepszym F1 jeszcze przed fine-tuningiem na moim benchmarku (0.920 vs. 0.87). Sam fine-tuning to LoRA na Modal.com z H100, 16 minut treningu i kilka dolarów, które poszły z puli którą dostawał każdy uczestnik hakatonu. Zbiór treningowy to 391 przykładów (242 ze screenshotów sklepu Airfix + 192 z papierowych instrukcji po augmentacji), zbiory testowe trzymane osobno.</p>
+<p><strong>Wyniki (po fine-tuningu):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Zbiór</th>
+          <th>F1</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Benchmark 10 obrazków</td>
+          <td>0.935 (wcześniej 0.920)</td>
+      </tr>
+      <tr>
+          <td>Przykłady z HF Space (4 obrazki)</td>
+          <td>1.000</td>
+      </tr>
+      <tr>
+          <td>Zbiór testowy ze sklepu (53 obrazki)</td>
+          <td>0.927</td>
+      </tr>
+      <tr>
+          <td>Zbiór testowy z papierowych instrukcji (7 obrazków)</td>
+          <td>0.928</td>
+      </tr>
+  </tbody>
+</table>
+<p>Co najlepsze, latency na Radxie spadło z ~194s do ~60s - trzy razy szybciej niż poprzedni model.</p>
+<p>Jest jedno zdjęcie, które model dalej powoduje błędy ekstrakcji: Chinook, na którym numery kalek w czerwonych kwadratach wyglądają identycznie jak kody farb. Biorąc pod uwage ogólny score dla tak małego modelu oraz dużą poprawę latency uznałem, że jest to akceptowalny koszt.</p>
 
 
   </div>

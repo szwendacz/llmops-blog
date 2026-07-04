@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Po hakatonie: wnioski na gorąco | LLMOps</title>
+<meta name="keywords" content="">
+<meta name="description" content="To jest wpis dla mnie z przyszłości. Chciałbym na gorąco spisać wnioski po hakatonie.
+1.
+To nie będzie nic odkrywczego, ale najważniejszy na hakatonie jest pomysł, którego nie robi się na siłę. Paint Match nie jest nowym lub odkrywczym produktem, ale dzięki temu, że sam sklejam modele i w dzieciństwie uwielbiałem grać w Airfix Dogfighter, to praca nad nim była przyjemnością. To bardzo pomaga w motywacji do dalszej pracy. Zdaję sobie sprawę, że nie zawsze da się powiązać pomysł z hobby, więc niech to, nad czym pracujesz, będzie dla Ciebie interesujące. Nie ma nic gorszego niż praca na siłę.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archiwum">
+                    <span>Archiwum</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Po hakatonie: wnioski na gorąco
+    </h1>
+    <div class="post-meta"><span title='2026-06-13 12:35:56 +0200 CEST'>June 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>To jest wpis dla mnie z przyszłości. Chciałbym na gorąco spisać wnioski po hakatonie.</p>
+<h2 id="1">1.<a hidden class="anchor" aria-hidden="true" href="#1">#</a></h2>
+<p>To nie będzie nic odkrywczego, ale najważniejszy na hakatonie jest pomysł, którego nie robi się na siłę. <em>Paint Match</em> nie jest nowym lub odkrywczym produktem, ale dzięki temu, że sam sklejam modele i w dzieciństwie uwielbiałem grać w Airfix Dogfighter, to praca nad nim była przyjemnością. To bardzo pomaga w motywacji do dalszej pracy. Zdaję sobie sprawę, że nie zawsze da się powiązać pomysł z hobby, więc niech to, nad czym pracujesz, będzie dla Ciebie interesujące. Nie ma nic gorszego niż praca na siłę.</p>
+<h2 id="2">2.<a hidden class="anchor" aria-hidden="true" href="#2">#</a></h2>
+<p>Dyscyplina pracy. W ciągu ostatniego tygodnia miałem wiele razy ochotę dołożyć dodatkowe funkcje do swojej aplikacji, ale na szczęście ograniczyłem ich liczbę do sensownego minimum. Dodatkowo, każda nowa funkcjonalność powstała dopiero po zakończeniu jednego z kamieni milowych, które sobie założyłem. Przykładowo: informacje o posiadanych farbach dodałem dopiero w momencie, gdy cały UI był stabilny. Przypomina to trochę waterfall, ale w przypadku jednoosobowego projektu dosyć łatwo zakopać się w dodatkowych tematach i finalnie ich nie zakończyć.</p>
+<h2 id="3">3.<a hidden class="anchor" aria-hidden="true" href="#3">#</a></h2>
+<p>Pomysł to jedno, ale wizja, jak produkt powinien wyglądać i działać, to inna kwestia. Motyw mojej aplikacji jest delikatnie militarny i pierwsza wersja powstała w oparciu o podstawowe funkcjonalności Gradio, ale wskazywała konkretny kierunek prac. Dzięki temu, kiedy skorzystałem z Claude Design, nie było żadnego problemu z zaprojektowaniem nowej wersji frontendu, która zachowała militarny styl, ale była dużo bardziej zbliżona do klimatu, na który liczyłem. Bez tej pierwszej, prymitywnej wersji w Gradio Claude Design nie wiedziałby, w którym kierunku pójść. Screenshoty obydwu wersji można obejrzeć w poprzednim wpisie.</p>
+<h2 id="4">4.<a hidden class="anchor" aria-hidden="true" href="#4">#</a></h2>
+<p>Claude Code potrafi naprawdę dużo. To pierwszy projekt, przy którym pracowałem w większości przy pomocy Claude Code. W poprzednich projektach to był na ogół mix Claude Desktop + Claude Code, ale teraz postanowiłem spróbować czegoś nowego. Kluczowy wniosek dla mnie z przyszłości to lepsza organizacja notatek i informacji dotyczących projektu. Muszę nad tym pomyśleć i tworzyć konkretniejszą strukturę (lista to-do, backlog z features, rozwiązane problemy, główne komendy itd.). Code czasem robi naprawdę głupie rzeczy (ubił proces z produkcyjnym serwerem llama), ale ma też swoje momenty (samodzielna iteracja nad promptem, która skończyła się finalnie na 17 wersjach).</p>
+<h2 id="5">5.<a hidden class="anchor" aria-hidden="true" href="#5">#</a></h2>
+<p>Czuję, że wciąż wykorzystuję tylko część tego, co Claude Code potrafi. Co tydzień widzę nowe kursy, które mają usprawnić pracę z Code, więc powinienem w końcu z jakiegoś skorzystać.</p>
+<h2 id="6">6.<a hidden class="anchor" aria-hidden="true" href="#6">#</a></h2>
+<p>Przy okazji hakatonu po raz pierwszy: użyłem modelu z wizją, zrobiłem fine tuning modelu, nagrałem demo produktu. Bez konkursu by tego nie było.</p>
+<h2 id="7">7.<a hidden class="anchor" aria-hidden="true" href="#7">#</a></h2>
+<p>Na koniec podtrzymuję to, co mówię od dawna. Małe modele są wolne, kapryśne i ograniczone. Paradoksalnie wszystkie te wady sprawiają, że praca z nimi jest naprawdę satysfakcjonująca, bo wymagają więcej wysiłku. Małe modele nie radzą sobie doskonale z wielozadaniowością (w odróżnieniu od dużych modeli, które z jednej strony napiszą kod całej aplikacji, a z drugiej przeanalizują Twoje wyniki badań krwi), ale jeśli zadanie jest jasno sprecyzowane, to potrafią bardzo pozytywnie zaskoczyć.</p>
+<h2 id="plan-na-następny-projekt">Plan na następny projekt<a hidden class="anchor" aria-hidden="true" href="#plan-na-następny-projekt">#</a></h2>
+<p>Konkretne zadanie na najbliższą przyszłość: lepiej poznać Claude Code oraz zorganizować sensowniejszy system przechowywania informacji w kolejnym projekcie.</p>
+<h2 id="zobacz-też">Zobacz też<a hidden class="anchor" aria-hidden="true" href="#zobacz-też">#</a></h2>
+<ul>
+<li><a href="/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/">Paint Match — pierwszy hakaton</a></li>
+<li><a href="/posts/radxa_dragon_q6a-/">Radxa Dragon Q6A</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/">
+    <span class="title">« Poprzednia</span>
+    <br>
+    <span>Czy maly model moze zastapic ify? Część druga</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>[EN] Paint match: first hackathon, first VLM on a board</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">LLMOps</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

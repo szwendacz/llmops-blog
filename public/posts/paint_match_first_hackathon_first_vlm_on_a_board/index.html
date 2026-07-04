@@ -7,9 +7,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>[EN] Paint match: first hackathon, first VLM on a board | LLMOps</title>
 <meta name="keywords" content="">
-<meta name="description" content="I know I was supposed to describe the next experiments I&rsquo;m running as part of EDGE AI, but last Wednesday an email from Hugging Face landed in my inbox with news about the Build Small Hackathon. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!
-Where did the idea come from?
-As a teenager, I loved the game Airfix Dogfighter, created by the Swedish studios Unique Development Studios and Paradox Entertainment under an Airfix license. 26 years after the game&rsquo;s release, I&rsquo;m still closely tied to the Airfix brand, because it&rsquo;s one of my favorite model kit manufacturers. Yes, I&rsquo;m a scale modeler. I love building plastic kits, because it&rsquo;s a perfect escape from the computer. Plus, it&rsquo;s nice to see the physical results of your work.">
+<meta name="description" content="
+A quick note before you start: I wrote this post during the hackathon, before fine-tuning the model. The current production state (with a new model) is described in the Update section at the end.
+
+I know I was supposed to describe the next experiments I&rsquo;m running as part of EDGE AI, but last Wednesday an email from Hugging Face landed in my inbox with news about the Build Small Hackathon. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/paint_match_first_hackathon_first_vlm_on_a_board/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
@@ -125,11 +126,14 @@ As a teenager, I loved the game Airfix Dogfighter, created by the Swedish studio
     <h1 class="post-title entry-hint-parent">
       [EN] Paint match: first hackathon, first VLM on a board
     </h1>
-    <div class="post-meta"><span title='2026-06-09 21:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>7 min</span>
+    <div class="post-meta"><span title='2026-06-09 21:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>9 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>I know I was supposed to describe the next experiments I&rsquo;m running as part of <em>EDGE AI</em>, but last Wednesday an email from Hugging Face landed in my inbox with news about the <a href="https://huggingface.co/build-small-hackathon">Build Small Hackathon</a>. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!</p>
+  <div class="post-content"><blockquote>
+<p>A quick note before you start: I wrote this post during the hackathon, before fine-tuning the model. The current production state (with a new model) is described in the <strong>Update</strong> section at the end.</p>
+</blockquote>
+<p>I know I was supposed to describe the next experiments I&rsquo;m running as part of <em>EDGE AI</em>, but last Wednesday an email from Hugging Face landed in my inbox with news about the <a href="https://huggingface.co/build-small-hackathon">Build Small Hackathon</a>. I have to admit this hackathon is special, because the central theme is small models up to 32B. Could there have been a more interesting topic? I honestly doubt it!</p>
 <h2 id="where-did-the-idea-come-from">Where did the idea come from?<a hidden class="anchor" aria-hidden="true" href="#where-did-the-idea-come-from">#</a></h2>
 <p>As a teenager, I loved the game <a href="https://en.wikipedia.org/wiki/Airfix_Dogfighter">Airfix Dogfighter</a>, created by the Swedish studios Unique Development Studios and Paradox Entertainment under an Airfix license. 26 years after the game&rsquo;s release, I&rsquo;m still closely tied to the Airfix brand, because it&rsquo;s one of my favorite model kit manufacturers. Yes, I&rsquo;m a scale modeler. I love building plastic kits, because it&rsquo;s a perfect escape from the computer. Plus, it&rsquo;s nice to see the physical results of your work.</p>
 <p><img alt="Airfix model set" loading="lazy" src="/images/airfix/airfix-pudelko.JPG"></p>
@@ -191,6 +195,43 @@ The app is fully responsive, which is key here — instruction sheet photos are 
 <p>This was my first time taking part in a hackathon, and I regret not doing it sooner. I was surprised by the number of decisions that had to be made for such a small project.
 On top of that, the hackathon format forces you to stick hard to previously set priorities. Coming up with new features is very easy, but implementing them sensibly is a different story. The cherry on top was using a vision model for the first time — and I have a feeling it won&rsquo;t be the last.
 Am I happy with the final result? You bet!</p>
+<h2 id="update-fine-tuning-and-a-sponsor-prize-pool">Update: fine-tuning and a sponsor prize pool<a hidden class="anchor" aria-hidden="true" href="#update-fine-tuning-and-a-sponsor-prize-pool">#</a></h2>
+<p>I wrapped up the required hackathon steps faster than I expected, so a few days were left before the deadline, which I used for two additional things: fine-tuning (a separate badge) and swapping the base model for MiniCPM-V-4.6 (a separate sponsor prize pool) — which is now running in production on the Radxa.</p>
+<p>MiniCPM-V-4.6 is a 1B model in a hybrid Qwen3.5-Mamba architecture — lighter than InternVL3.5-2B and with a better F1 even before fine-tuning on my benchmark (0.920 vs. 0.87). The fine-tuning itself was LoRA on Modal.com with an H100, 16 minutes of training and a few dollars. The training set was 391 examples (242 from Airfix store screenshots + 192 from paper instructions after augmentation), with test sets kept separate.</p>
+<p><strong>Results (after fine-tuning):</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Set</th>
+          <th>F1</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Benchmark, 10 images</td>
+          <td>0.935 (up from 0.920)</td>
+      </tr>
+      <tr>
+          <td>HF Space examples (4 images)</td>
+          <td>1.000</td>
+      </tr>
+      <tr>
+          <td>Shop test set (53 images)</td>
+          <td>0.927</td>
+      </tr>
+      <tr>
+          <td>Paper instructions test set (7 images)</td>
+          <td>0.928</td>
+      </tr>
+  </tbody>
+</table>
+<p>Latency on the Radxa dropped from ~194s to ~60s — three times faster than the previous model.</p>
+<p>There&rsquo;s one image the model still gets wrong: a Chinook, where decal numbers in red squares look visually identical to paint codes. Acceptable for a 1B model, but a clear weakness to address next.</p>
+<h2 id="see-also">See also<a hidden class="anchor" aria-hidden="true" href="#see-also">#</a></h2>
+<ul>
+<li><a href="/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/">Paint Match — polski opis</a></li>
+<li><a href="/posts/po_hakatonie_wnioski_na_goraco/">Po hakatonie — wnioski na gorąco</a></li>
+</ul>
 
 
   </div>
@@ -199,6 +240,11 @@ Am I happy with the final result? You bet!</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/">
+    <span class="title">« Poprzednia</span>
+    <br>
+    <span>Po hakatonie: wnioski na gorąco</span>
+  </a>
   <a class="next" href="http://localhost:1313/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/">
     <span class="title">Następna »</span>
     <br>
