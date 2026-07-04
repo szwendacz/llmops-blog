@@ -1,7 +1,7 @@
 +++
 date = '2026-07-04T14:05:00+02:00'
 draft = false
-title = 'Czy maly model moze zastapic ify.Część druga'
+title = 'Czy maly model moze zastapic ify? Część druga'
 +++
 
 Powinienem napisać tego posta dawno temu, ale nie mogłem się do niego zebrać ponieważ uznałem, że to będzie ostatni post z serii, która początkowo miała liczyć sześć wpisów. Już wyjaśniam skąd taka decyzja. 
