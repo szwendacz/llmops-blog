@@ -4,7 +4,7 @@ draft = false
 title = 'Paint match: pierwszy hakaton, pierwszy VLM na płytce'
 +++
 
-*> Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji **Aktualizacja** na końcu.*
+> Krótka uwaga zanim zaczniesz: post pisałem w trakcie hakatonu, jeszcze przed fine-tuningiem modelu. Aktualny stan produkcji (z nowym modelem) opisany w sekcji **Aktualizacja** na końcu.
 
 Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które przeprowadzam w ramach *EDGE AI*, ale w poprzednią środę na moją skrzynkę trafił mail z Hugging Face z informacją na temat hakatonu [Build Small Hackathon](https://huggingface.co/build-small-hackathon). Muszę przyznać, że ten hakaton jest wyjątkowy, ponieważ motywem przewodnim są małe modele do 32B. Czy mogł trafić się ciekawszy temat? Szczerze wątpię! 
 
