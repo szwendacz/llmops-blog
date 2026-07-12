@@ -38,3 +38,8 @@ Nie będzie to pewnie dla nikogo zaskoczeniem, ale ten proces jest iteracyjny. A
 
 To byłoby na tyle tym razem. Oczywiście opisany przeze mnie proces to tylko jeden z możliwych scenariuszy, ale moim zdaniem jest całkiem solidny jako punkt startowy. Podstawą w każdym przypadku jest jak najczęstsze używanie swojego produktu i analizowanie tego, jak działa. Intuicja przychodzi z czasem. 
 Co do samych testerów, chciałbym wierzyć, że na bazie tej roli za jakiś czas pojawi się pozycja walidatora, który będzie w stanie przełożyć wiedzę eksperta domenowego na solidne metryki i poprawne działanie systemu korzystającego z LLM.
+
+## Zobacz też
+
+- [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)
+- [Zmiana flow](/posts/zmiana_flow/)

@@ -54,4 +54,4 @@ Na dzisiaj to tyle. W kolejnym poście w końcu przejdziemy do, moim skromnym zd
 ## Zobacz też
 
 - [Radxa Dragon Q6A](/posts/radxa_dragon_q6a-/)
-- [Zmiana flow](/posts/zmiana_flow/)
+- [Paint match: pierwszy hakaton, pierwszy VLM na płytce](/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_płytce/)
