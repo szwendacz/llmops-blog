@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</loc>
-    <lastmod>2026-07-04T14:05:00+02:00</lastmod>
+    <loc>http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/</loc>
+    <lastmod>2026-07-10T12:12:03+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-07-04T14:05:00+02:00</lastmod>
+    <lastmod>2026-07-10T12:12:03+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-07-10T12:12:03+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</loc>
     <lastmod>2026-07-04T14:05:00+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/</loc>

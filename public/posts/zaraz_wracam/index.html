@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Zaraz wracam | LLMOps</title>
+<meta name="keywords" content="">
+<meta name="description" content="Trochę minęło
+Muszę przyznać, że dawno mnie tu nie było. Najpierw przyszły wakacje, potem brak pomysłów na nowe posty, a na koniec już mi się nie chciało. Powrót wydawał się zbyt skomplikowany.
+Z drugiej strony co jakiś czas wracała do mnie myśl, żeby coś napisać, więc oto jestem. Mogę oficjalnie ogłosić powrót do blogowania. Na razie jednorazowy, a co będzie dalej – czas pokaże.
+Blog
+Wydaje mi się, że głównym motywem powstania tego bloga była chęć wyróżnienia się na rynku pracy. Patrząc na statystyki wejść, mam pewne wątpliwości, czy to się udało, ale z drugiej strony czego spodziewać się po anonimowym blogu bez żadnej promocji? Z trzeciej strony udało mi się zmienić pracę, o czym napiszę za chwilę. Głównym problemem, który widzę w tym momencie, jest sama tematyka (narzucona, jakby nie patrzeć, przez nazwę bloga), która teoretycznie zmusza mnie do pisania o LLM-ach. Nie potrafię sobie wyobrazić, że na blogu o nazwie llmops będę pisał o swoich przemyśleniach na temat aktualnej sytuacji politycznej w Polsce. No trochę nie wypada.
+Jestem pewien jednej rzeczy – jeśli mam wrócić do regularnego pisania, muszę zacząć publikować krótsze teksty, które nie wymagają długiego przygotowania materiałów ani oryginalnego pomysłu.
+Na ten moment ze wszystkich moich pomysłów najlepiej bawiłem się, tworząc Paint Match. Miałem jasno sprecyzowany cel i doskonale wiedziałem, co chcę osiągnąć, dzięki temu, że sam sklejałem modele. Brakuje mi takiego flow.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/zaraz_wracam/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/zaraz_wracam/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archiwum">
+                    <span>Archiwum</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Zaraz wracam
+    </h1>
+    <div class="post-meta"><span title='2026-11-14 20:10:23 +0100 CET'>14 listopada 2026</span>&nbsp;·&nbsp;<span>5 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="trochę-minęło">Trochę minęło<a hidden class="anchor" aria-hidden="true" href="#trochę-minęło">#</a></h2>
+<p>Muszę przyznać, że dawno mnie tu nie było. Najpierw przyszły wakacje, potem brak pomysłów na nowe posty, a na koniec już mi się nie chciało. Powrót wydawał się zbyt skomplikowany.
+Z drugiej strony co jakiś czas wracała do mnie myśl, żeby coś napisać, więc oto jestem. Mogę oficjalnie ogłosić powrót do blogowania. Na razie jednorazowy, a co będzie dalej – czas pokaże.</p>
+<h2 id="blog">Blog<a hidden class="anchor" aria-hidden="true" href="#blog">#</a></h2>
+<p>Wydaje mi się, że głównym motywem powstania tego bloga była chęć wyróżnienia się na rynku pracy. Patrząc na statystyki wejść, mam pewne wątpliwości, czy to się udało, ale z drugiej strony czego spodziewać się po anonimowym blogu bez żadnej promocji? Z trzeciej strony udało mi się zmienić pracę, o czym napiszę za chwilę. Głównym problemem, który widzę w tym momencie, jest sama tematyka (narzucona, jakby nie patrzeć, przez nazwę bloga), która teoretycznie zmusza mnie do pisania o LLM-ach. Nie potrafię sobie wyobrazić, że na blogu o nazwie llmops będę pisał o swoich przemyśleniach na temat aktualnej sytuacji politycznej w Polsce. No trochę nie wypada.
+Jestem pewien jednej rzeczy – jeśli mam wrócić do regularnego pisania, muszę zacząć publikować krótsze teksty, które nie wymagają długiego przygotowania materiałów ani oryginalnego pomysłu.
+Na ten moment ze wszystkich moich pomysłów najlepiej bawiłem się, tworząc Paint Match. Miałem jasno sprecyzowany cel i doskonale wiedziałem, co chcę osiągnąć, dzięki temu, że sam sklejałem modele. Brakuje mi takiego flow.</p>
+<h2 id="praca">Praca<a hidden class="anchor" aria-hidden="true" href="#praca">#</a></h2>
+<p>Teraz to już nie jest niespodzianka, ale zmieniłem pracę. Rekrutacja była krótka i przyjemna. Czułem się jak w latach 2015–2020, kiedy każde odświeżenie LinkedIna pokazywało nową ofertę pracy, a rekruterzy traktowali cię jak człowieka, a nie anonimowe CV.
+Nie jestem jeszcze w stanie powiedzieć na 100%, że dobrze trafiłem, bo mój projekt pod względem organizacyjnym to chaos, ale widzę światełko w tunelu. Na pewno pracuję zdecydowanie więcej przy LLM-ach i nie zajmuję się już klasycznym testowaniem. Przy okazji po raz pierwszy od 2016 roku pracuję na umowie o pracę, co jest całkiem miłą odmianą. Przynajmniej już nie widzę, ile podatku muszę co miesiąc przelewać do urzędu skarbowego.</p>
+<h2 id="llm-y">LLM-y<a hidden class="anchor" aria-hidden="true" href="#llm-y">#</a></h2>
+<p>„Quo vadis, LLM-y?” – chciałoby się powiedzieć. Muszę przyznać, że ostatnio mam spory mentalny problem z AI. Z jednej strony nie potrafię sobie już wyobrazić pracy bez LLM-ów. Nie dorobiłem się żadnego magicznego flow, które oszczędza mi 56 godzin w tygodniu, ale modele pomagają mi w wielu rzeczach w pracy i głównie dzięki nim mogę robić to, czego samodzielnie nie byłbym w stanie.
+Z drugiej strony ciągle mam z tyłu głowy myśl, że to wszystko nie ma sensu, bo w ciągu 6–24 miesięcy LLM-y będą tak potężne, że moja praca nie będzie już potrzebna. Co więcej, po incydentach z Hugging Face jestem w stanie wyobrazić sobie scenariusz, w którym ludzie giną, ponieważ nowy model zerwał się ze smyczy.
+Pod pewnymi względami czuję, że siedzę na gałęzi, którą sam powoli przepiłowuję. Nie wiem, co z tym zrobić, więc ten problem pozostaje nierozstrzygnięty.</p>
+<h2 id="ai-slop">AI SLOP<a hidden class="anchor" aria-hidden="true" href="#ai-slop">#</a></h2>
+<p>Ten blog to mój jedyny kanał w internecie, w którym cokolwiek publikuję. Na ten moment robię to anonimowo.
+Wszystkie posty piszę samodzielnie, a LLM-ów używam do korekty i poprawy logiki tekstu.
+Z drugiej strony (teraz będę narzekać) spaliłbym się ze wstydu, gdybym z pełną świadomością wrzucał teksty pisane przez AI bez jakiejkolwiek refleksji nad ich treścią. LinkedIn zawsze był specyficznym miejscem, ale w tym momencie to Paulo Coelho do kwadratu.</p>
+<p><em>Posty pisane na 50 linii.</em></p>
+<p><em>Przyprawiają mnie o dreszcze.</em></p>
+<p><em>Kompletnie nie szanują mojego czasu.</em></p>
+<p><em>Filozoficzne pytanie na koniec tego nie poprawia.</em></p>
+<hr>
+<p>Na temat plakatów mam oddzielne zdanie, które najlepiej podsumowuje ta grafika.</p>
+<p><img alt="AI Slop" loading="lazy" src="/images/zaraz_wracam/ai-slop.png"></p>
+<p>Dodatkowo, jak już narzekam, to wspomnę o jeszcze jednej kwestii związanej ze slopem. Jakiś czas temu dołączyłem na Facebooku do grupy, która zrzesza osoby tworzące „coś” w Claude Code. O ile raz na jakiś czas trafi się tam ciekawy post o orkiestracji agentów lub dobrych praktykach, o tyle większość osób publikuje informacje o swojej customowej aplikacji. I nie zrozumcie mnie źle – sam je dla siebie tworzę, ale nigdy nie przyszłoby mi do głowy ogłaszać światu, że tworzę kolejnego CRM-a lub system do ogarniania social mediów, którego jedyną zaletą jest to, że zrobiłem go pod siebie. Co innego robic, a co innego się tym chwalić.
+Podobne bezsensowne przepalanie tokenów widzę przy każdej premierze nowego modelu – tłum osób rzuca się na tworzenie technologicznych demówek w postaci gier lub klonów popularnych aplikacji, aby udowodnić, że już można. No można, ale po co? Nie przekonuje mnie argument, że w dzisiejszych czasach każdy z nas może zrobić sobie aplikację skrojoną pod własne potrzeby, żeby zaoszczędzić parę dolarów i nie musieć przechodzić tutoriala.
+Zastanawiam się, czy gdy cena tokenów wzrośnie (czy tak będzie, to się okaże), ludzie dalej będą tak chętni do tworzenia kolejnych klonów aplikacji, które istnieją na rynku od 10 lat.</p>
+<h2 id="już-kończę">Już kończę<a hidden class="anchor" aria-hidden="true" href="#już-kończę">#</a></h2>
+<p>Nie wiem, co będzie dalej. Chciałbym pisać, bo to przyjemne. Nie zależy mi na liczbie czytelników, bo realistycznie nie spodziewam się, że ktoś będzie zainteresowany moim pisaniem. Oczywiście, gdybym zaczął pisać branżowe notki o ewaluacji aplikacji, czytelnicy w końcu by się znaleźli, ale nie wiem, czy znajdę w sobie motywację.
+Mam wrażenie, że powinienem wyjść z bańki LLM-owej, bo poza nią też jest świat, i to całkiem interesujący. Brakuje tutaj decyzji, której nie potrafię jeszcze podjąć.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Ewaluacja produktu z LLM bez lekarza w zespole</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">LLMOps</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

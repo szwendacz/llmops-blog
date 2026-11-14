@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Ewaluacja produktu z LLM bez lekarza w zespole | LLMOps</title>
+<meta name="keywords" content="">
+<meta name="description" content="Wstęp
+Biorąc pod uwagę dotychczasową treść na blogu, nowy czytelnik może pomyśleć, że jestem developerem, który na co dzień zajmuje się pracą z małymi modelami i hardwarem. To byłoby oczywiście bardzo miłe, ale również bardzo nieprawdziwe;)
+Od początku swojej kariery zawodowej w IT jestem związany z testowaniem oprogramowania, a w aktualnym miejscu pracy zajmuję się testowaniem aplikacji medycznych ze szczególnym naciskiem na ewaluację działania modeli LLM.
+Impulsem do tego wpisu był odcinek podcastu &ldquo;Dodane do backlogu&rdquo; o tytule &ldquo;Jak budować produkty AI: Evals i rola PM-a w erze LLM&rdquo;. Pojawił się tam wątek roli QA, która może być dobrym pomostem do przyszłej pozycji &ldquo;walidatora&rdquo;. To stanowisko, które nie ma jeszcze de facto oficjalnej nazwy i jasno zarysowanego zakresu obowiązków, ale jest związane z ewaluacją aplikacji korzystających z LLM.
+W związku z tym, że ostatnio pracuję nad stworzeniem procesu ewaluacji do jednej z naszych aplikacji, mam parę przemyśleń, które chciałbym, żeby ze mną zostały. Najlepszym sposobem będzie ich spisanie, więc dzisiejszy post będzie raczej próbą uporządkowania pojedynczych myśli, które pojawiły mi się w ciągu ostatnich tygodni.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5671a99e27b18b9a7dd02951698584ff736ffa6a2bfe61cc94b84ab82587dcef.css" integrity="sha256-VnGpniexi5p90ClRaYWE/3Nv&#43;mor/mHMlLhKuCWH3O8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="LLMOps (Alt + H)">LLMOps<span class="logo-subtitle">Notatki z pracy z małymi modelami LLM</span>
+            </a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archiwum">
+                    <span>Archiwum</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Ewaluacja produktu z LLM bez lekarza w zespole
+    </h1>
+    <div class="post-meta"><span title='2026-07-10 12:12:03 +0200 CEST'>10 lipca 2026</span>&nbsp;·&nbsp;<span>7 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="wstęp">Wstęp<a hidden class="anchor" aria-hidden="true" href="#wstęp">#</a></h2>
+<p>Biorąc pod uwagę dotychczasową treść na blogu, nowy czytelnik może pomyśleć, że jestem developerem, który na co dzień zajmuje się pracą z małymi modelami i hardwarem. To byłoby oczywiście bardzo miłe, ale również bardzo nieprawdziwe;)
+Od początku swojej kariery zawodowej w IT jestem związany z testowaniem oprogramowania, a w aktualnym miejscu pracy zajmuję się testowaniem aplikacji medycznych ze szczególnym naciskiem na ewaluację działania modeli LLM.</p>
+<p>Impulsem do tego wpisu był odcinek podcastu &ldquo;Dodane do backlogu&rdquo; o tytule &ldquo;<a href="https://open.spotify.com/show/5K6L7Vs3QAE8ebO7RFbKXv">Jak budować produkty AI: Evals i rola PM-a w erze LLM</a>&rdquo;. Pojawił się tam wątek roli QA, która może być dobrym pomostem do przyszłej pozycji &ldquo;walidatora&rdquo;. To stanowisko, które nie ma jeszcze de facto oficjalnej nazwy i jasno zarysowanego zakresu obowiązków, ale jest związane z ewaluacją aplikacji korzystających z LLM.
+W związku z tym, że ostatnio pracuję nad stworzeniem procesu ewaluacji do jednej z naszych aplikacji, mam parę przemyśleń, które chciałbym, żeby ze mną zostały. Najlepszym sposobem będzie ich spisanie, więc dzisiejszy post będzie raczej próbą uporządkowania pojedynczych myśli, które pojawiły mi się w ciągu ostatnich tygodni.</p>
+<h2 id="narzędzia">Narzędzia<a hidden class="anchor" aria-hidden="true" href="#narzędzia">#</a></h2>
+<p>Zacznę od narzędzi, ponieważ mam dosyć stanowczą opinie na ich temat. Uważam, że są najmniej ważne w całym procesie ewaluacji. Na start naprawdę wystarczy prosty Excel, bo najważniejsze to zacząć, zamiast skupić się na wyborze odpowiedniego toola. Po jakimś czasie będziemy lepiej wiedzieć, czego tak naprawdę potrzebujemy. Tutaj też bym się na chwilę zatrzymał, bo w dzisiejszych czasach korzystanie z gotowych rozwiązań może nie być najlepszym pomysłem. W aktualnym projekcie ewaluacje przeprowadzamy za pomocą prostej aplikacji pythonowej, która jest idealnie skrojona pod nasze potrzeby. Z ciekawości porównywałem ją ostatnio z wiodącymi platformami do ewaluacji (promptfoo, DeepEval, MLflow, Braintrust, Inspect AI) i po analizie wyszło na to, że brakuje nam głównie funkcji wersjonowania danych oraz większej granularności przy wyborze modelu. To są rzeczy, które można dopisać w jedno popołudnie. Na wynik analizy nie miało wpływu to, że jestem autorem naszego narzędzia&hellip; Zakładam, że masz w zespole developera lub inną osobę, która kodowała w przeszłości. Przy dzisiejszej jakości dużych modeli językowych stworzenie wewnętrznego narzędzia wymaga specyfikacji i czasu na parę iteracji. Ten czas i tak będziesz musiał poświęcić na wdrożenie gotowego oprogramowania. Podsumowując ten punkt: narzędzia nie są tak ważne, jak się wydaje. Przed skorzystaniem z gotowego narzędzia dobrze wiedzieć, czego się naprawdę potrzebuje, i spróbować stworzyć to samemu.</p>
+<h2 id="kiedy-uruchomić-ewaluacje">Kiedy uruchomić ewaluacje?<a hidden class="anchor" aria-hidden="true" href="#kiedy-uruchomić-ewaluacje">#</a></h2>
+<p>Idąc dalej, na horyzoncie pojawia się proces ewaluacji. Skupię się tutaj głównie na sytuacjach, które moim zdaniem prowadzą do tego, że powinniśmy uruchomić pipeline i przeanalizować wyniki. Nie jestem przekonany, że pełne ewaluacje powinny być uruchamiane przy każdej zmianie w kodzie - zajmuje to sporo czasu i nie jest darmowe. Po pierwsze najbardziej oczywista sytuacja - zmiana promptu. Sprawdzamy, czy nic się nie zepsuło. Po drugie - zmiana modelu. Sprawdzamy, czy nowy model działa poprawnie. Po trzecie - porównanie różnych modeli. Może aktualny model warto zastąpić czymś tańszym i szybszym? Po czwarte - co jakiś czas dla pewności, czy model działa tak samo prawidłowo. Większość z nas korzysta z dostawców zewnętrznych i nie mamy 100% pewności, czy pod spodem modelu nic się nie zmieniło. Dodatkowo cały czas należy analizować traces w kontekście świeżych błędów, które pojawiają się niespodziewanie (jestem zadowolonym użytkownikiem Langfuse, ale Arize Phoenix też jest dobre).</p>
+<h2 id="metryki">Metryki<a hidden class="anchor" aria-hidden="true" href="#metryki">#</a></h2>
+<p>Na końcu crème de la crème każdej ewaluacji - metryki. Wydaje mi się, że tutaj leży największe pole do popisu dla testerów.
+Od strony technicznej mamy dwa kierunki: weryfikacje deterministyczne, czyli te, które opisujemy za pomocą kodu. Ocena liczby znaków, format outputu, który sprawdzamy za pomocą regexa. To pierwsza bramka jakości, która weryfikuje błędy najłatwiejsze do wyłapania.
+Drugim kierunkiem jest LLM-as-a-judge, którego używamy w przypadkach, gdy chcemy zweryfikować coś, czego nie da się opisać prostymi zasadami lub wymaga głębszego rozumowania. Rozwinięciem LLM-as-a-judge jest PoLL, czyli Panel of LLM Evaluators.
+Na start większość produktów zaczyna z gotowymi metrykami w stylu hallucination, accuracy, precision. Jest to oczywiście wystarczające, ale z biegiem czasu zaczynamy zauważać, że pewne błędy i problemy nie są wyłapywane przez te generyczne oceny. Po tym etapie poznajemy coraz lepiej swój produkt i dochodzimy do wniosku, że trzeba wprowadzić dokładniejsze weryfikacje.</p>
+<p>Posłużę się teraz przykładem ze swojego obecnego produktu. W naszym zespole nie ma żadnego lekarza, więc przy projektowaniu metryk korzystamy z eksperta zewnętrznego, który posiada wykształcenie medyczne. Jego zadaniem jest zaprojektowanie kryteriów oceny, które będą weryfikować nasz produkt pod względem merytorycznym. Z wykształcenia jestem bibliotekarzem, więc daleko mi do eksperta w tym temacie, ale nie oznacza to, że biernie czekam, aż nasz specjalista zakończy swoją pracę. Tutaj moim zdaniem pojawia się nowa rola, którą może pełnić tester. W czasie spotkań dyskutuję z ekspertem na temat metryk, które przygotował, i staram się wskazać mu problematyczne fragmenty dotyczące samej treści lub skali ocen. Warto tutaj doczytać o terminie &ldquo;knowledge elicitation&rdquo;, czyli procesie wydobywania wiedzy od ekspertów dziedzinowych i przekształcania jej w ustrukturyzowaną formę. Temat jest na tyle ciekawy, że postaram się napisać o nim oddzielny post. Pomimo tego, że lekarz ma wiedzę domenową, to nie zawsze wie, jak ją merytorycznie przełożyć na dokładny opis, który może być użyty w kontekście LLM. Staram się również wyłapywać fragmenty, które mogą być trudne do oceny dla modelu (nawet człowiek będzie miał problem ze skalą oceny, która daje pozytywny wynik za output opisany jako complete, a negatywny jako near-to-complete).
+Po tym jak metryki zostaną przygotowane, przekładam je na prompty dla LLM judge i weryfikuję jeszcze raz z ekspertem w celu potwierdzenia, że przełożenie metryk na instrukcje nie wypaczyło ich sensu. Po zaakceptowaniu zmian uruchamiam pipeline z ewaluacją i nie przechodzę od razu do wielokrotnej oceny outputu. Po pierwsze, weryfikuję, czy LLM-as-a-judge jest konsekwentny i tak samo lub podobnie (+/- 1 w skali 1-5 lub true/false) ocenia ten sam pojedynczy output. Jeśli widać tutaj znaczące odstępstwa, to jest to dla mnie znak, że metryka wymaga poprawy. Po drugie, jeśli sędzia w miarę deterministycznie (taki żarcik w kontekście LLM) ocenia przykładowy wynik, przechodzę do właściwej walidacji. Liczba ewaluacji zależy od ilości danych testowych oraz od czasu eksperta, o czym warto pamiętać.
+Tylko po co nam ekspert, jeśli metryki są już ustalone, a pipeline do ewaluacji zaakceptowany? Często zdarza się, że ekspert ocenia diametralnie inaczej niż LLM-as-a-judge. Idealna sytuacja, do której należy dążyć, to te same lub bardzo zbliżone wyniki w obydwu przypadkach.
+Nie będzie to pewnie dla nikogo zaskoczeniem, ale ten proces jest iteracyjny. Aktualnie jestem na etapie oceny czwartej wersji metryk i udało mi się zaobserwować ciekawą zależność - z biegiem czasu stopień skomplikowania metryk zmniejsza się, a proces oceny pozostaje tak samo solidny. Nie mam na to oczywiście żadnych dowodów poza jednym przypadkiem, ale mam pewną teorię. Na początku pracy z LLM staramy się rozpisać proces najdokładniej, jak to możliwe, ale spisujemy go w sposób zrozumiały przede wszystkim dla ludzi. Z biegiem czasu i rosnącym doświadczeniem eksperta, który korzysta z pomocy walidatora, pojawia się lepsze zrozumienie tego, w jaki sposób LLM &ldquo;rozumuje&rdquo;. Skutkuje to kondensacją samej metryki i pozostawieniem corowej funkcjonalności bez niepotrzebnych słownych ozdobników. To jest moim zdaniem największa zaleta i szansa nowej roli walidatora - taka osoba nie musi posiadać wiedzy domenowej, ale musi wiedzieć, jak przełożyć wiedzę eksperta na metryki i pomóc mu lepiej zrozumieć działanie modeli.</p>
+<h2 id="podsumowanie">Podsumowanie<a hidden class="anchor" aria-hidden="true" href="#podsumowanie">#</a></h2>
+<p>To byłoby na tyle tym razem. Oczywiście opisany przeze mnie proces to tylko jeden z możliwych scenariuszy, ale moim zdaniem jest całkiem solidny jako punkt startowy. Podstawą w każdym przypadku jest jak najczęstsze używanie swojego produktu i analizowanie tego, jak działa. Intuicja przychodzi z czasem.
+Co do samych testerów, chciałbym wierzyć, że na bazie tej roli za jakiś czas pojawi się pozycja walidatora, który będzie w stanie przełożyć wiedzę eksperta domenowego na solidne metryki i poprawne działanie systemu korzystającego z LLM.</p>
+<h2 id="zobacz-też">Zobacz też<a hidden class="anchor" aria-hidden="true" href="#zobacz-też">#</a></h2>
+<ul>
+<li><a href="/posts/radxa_dragon_q6a-/">Radxa Dragon Q6A</a></li>
+<li><a href="/posts/paint_match_pierwszy_hakaton_pierwszy_vlm_na_p%C5%82ytce/">Paint match: pierwszy hakaton, pierwszy VLM na płytce</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/">
+    <span class="title">Następna »</span>
+    <br>
+    <span>Czy maly model moze zastapic ify? Część druga</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">LLMOps</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

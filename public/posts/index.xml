@@ -6,8 +6,19 @@
     <description>Recent content in Posts on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sat, 04 Jul 2026 14:05:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 12:12:03 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ewaluacja produktu z LLM bez lekarza w zespole</title>
+      <link>http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/</link>
+      <pubDate>Fri, 10 Jul 2026 12:12:03 +0200</pubDate>
+      <guid>http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/</guid>
+      <description>&lt;h2 id=&#34;wstęp&#34;&gt;Wstęp&lt;/h2&gt;
+&lt;p&gt;Biorąc pod uwagę dotychczasową treść na blogu, nowy czytelnik może pomyśleć, że jestem developerem, który na co dzień zajmuje się pracą z małymi modelami i hardwarem. To byłoby oczywiście bardzo miłe, ale również bardzo nieprawdziwe;)
+Od początku swojej kariery zawodowej w IT jestem związany z testowaniem oprogramowania, a w aktualnym miejscu pracy zajmuję się testowaniem aplikacji medycznych ze szczególnym naciskiem na ewaluację działania modeli LLM.&lt;/p&gt;
+&lt;p&gt;Impulsem do tego wpisu był odcinek podcastu &amp;ldquo;Dodane do backlogu&amp;rdquo; o tytule &amp;ldquo;&lt;a href=&#34;https://open.spotify.com/show/5K6L7Vs3QAE8ebO7RFbKXv&#34;&gt;Jak budować produkty AI: Evals i rola PM-a w erze LLM&lt;/a&gt;&amp;rdquo;. Pojawił się tam wątek roli QA, która może być dobrym pomostem do przyszłej pozycji &amp;ldquo;walidatora&amp;rdquo;. To stanowisko, które nie ma jeszcze de facto oficjalnej nazwy i jasno zarysowanego zakresu obowiązków, ale jest związane z ewaluacją aplikacji korzystających z LLM.
+W związku z tym, że ostatnio pracuję nad stworzeniem procesu ewaluacji do jednej z naszych aplikacji, mam parę przemyśleń, które chciałbym, żeby ze mną zostały. Najlepszym sposobem będzie ich spisanie, więc dzisiejszy post będzie raczej próbą uporządkowania pojedynczych myśli, które pojawiły mi się w ciągu ostatnich tygodni.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Czy maly model moze zastapic ify? Część druga</title>
       <link>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</link>

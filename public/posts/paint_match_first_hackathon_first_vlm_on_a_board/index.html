@@ -126,7 +126,7 @@ I know I was supposed to describe the next experiments I&rsquo;m running as part
     <h1 class="post-title entry-hint-parent">
       [EN] Paint match: first hackathon, first VLM on a board
     </h1>
-    <div class="post-meta"><span title='2026-06-09 21:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>9 min</span>
+    <div class="post-meta"><span title='2026-06-09 21:37:38 +0200 CEST'>9 czerwca 2026</span>&nbsp;·&nbsp;<span>9 min</span>
 
 </div>
   </header> 
@@ -200,30 +200,30 @@ Am I happy with the final result? You bet!</p>
 <p>MiniCPM-V-4.6 is a 1B model in a hybrid Qwen3.5-Mamba architecture — lighter than InternVL3.5-2B and with a better F1 even before fine-tuning on my benchmark (0.920 vs. 0.87). The fine-tuning itself was LoRA on Modal.com with an H100, 16 minutes of training and a few dollars. The training set was 391 examples (242 from Airfix store screenshots + 192 from paper instructions after augmentation), with test sets kept separate.</p>
 <p><strong>Results (after fine-tuning):</strong></p>
 <table>
-  <thead>
-      <tr>
-          <th>Set</th>
-          <th>F1</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Benchmark, 10 images</td>
-          <td>0.935 (up from 0.920)</td>
-      </tr>
-      <tr>
-          <td>HF Space examples (4 images)</td>
-          <td>1.000</td>
-      </tr>
-      <tr>
-          <td>Shop test set (53 images)</td>
-          <td>0.927</td>
-      </tr>
-      <tr>
-          <td>Paper instructions test set (7 images)</td>
-          <td>0.928</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Set</th>
+					<th>F1</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Benchmark, 10 images</td>
+					<td>0.935 (up from 0.920)</td>
+			</tr>
+			<tr>
+					<td>HF Space examples (4 images)</td>
+					<td>1.000</td>
+			</tr>
+			<tr>
+					<td>Shop test set (53 images)</td>
+					<td>0.927</td>
+			</tr>
+			<tr>
+					<td>Paper instructions test set (7 images)</td>
+					<td>0.928</td>
+			</tr>
+	</tbody>
 </table>
 <p>Latency on the Radxa dropped from ~194s to ~60s — three times faster than the previous model.</p>
 <p>There&rsquo;s one image the model still gets wrong: a Chinook, where decal numbers in red squares look visually identical to paint codes. Acceptable for a 1B model, but a clear weakness to address next.</p>

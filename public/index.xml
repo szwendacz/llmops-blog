@@ -6,8 +6,32 @@
     <description>Recent content on LLMOps</description>
     <generator>Hugo</generator>
     <language>pl</language>
-    <lastBuildDate>Sat, 04 Jul 2026 14:05:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 20:10:23 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zaraz wracam</title>
+      <link>http://localhost:1313/posts/zaraz_wracam/</link>
+      <pubDate>Sat, 14 Nov 2026 20:10:23 +0100</pubDate>
+      <guid>http://localhost:1313/posts/zaraz_wracam/</guid>
+      <description>&lt;h2 id=&#34;trochę-minęło&#34;&gt;Trochę minęło&lt;/h2&gt;
+&lt;p&gt;Muszę przyznać, że dawno mnie tu nie było. Najpierw przyszły wakacje, potem brak pomysłów na nowe posty, a na koniec już mi się nie chciało. Powrót wydawał się zbyt skomplikowany.
+Z drugiej strony co jakiś czas wracała do mnie myśl, żeby coś napisać, więc oto jestem. Mogę oficjalnie ogłosić powrót do blogowania. Na razie jednorazowy, a co będzie dalej – czas pokaże.&lt;/p&gt;
+&lt;h2 id=&#34;blog&#34;&gt;Blog&lt;/h2&gt;
+&lt;p&gt;Wydaje mi się, że głównym motywem powstania tego bloga była chęć wyróżnienia się na rynku pracy. Patrząc na statystyki wejść, mam pewne wątpliwości, czy to się udało, ale z drugiej strony czego spodziewać się po anonimowym blogu bez żadnej promocji? Z trzeciej strony udało mi się zmienić pracę, o czym napiszę za chwilę. Głównym problemem, który widzę w tym momencie, jest sama tematyka (narzucona, jakby nie patrzeć, przez nazwę bloga), która teoretycznie zmusza mnie do pisania o LLM-ach. Nie potrafię sobie wyobrazić, że na blogu o nazwie llmops będę pisał o swoich przemyśleniach na temat aktualnej sytuacji politycznej w Polsce. No trochę nie wypada.
+Jestem pewien jednej rzeczy – jeśli mam wrócić do regularnego pisania, muszę zacząć publikować krótsze teksty, które nie wymagają długiego przygotowania materiałów ani oryginalnego pomysłu.
+Na ten moment ze wszystkich moich pomysłów najlepiej bawiłem się, tworząc Paint Match. Miałem jasno sprecyzowany cel i doskonale wiedziałem, co chcę osiągnąć, dzięki temu, że sam sklejałem modele. Brakuje mi takiego flow.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ewaluacja produktu z LLM bez lekarza w zespole</title>
+      <link>http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/</link>
+      <pubDate>Fri, 10 Jul 2026 12:12:03 +0200</pubDate>
+      <guid>http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/</guid>
+      <description>&lt;h2 id=&#34;wstęp&#34;&gt;Wstęp&lt;/h2&gt;
+&lt;p&gt;Biorąc pod uwagę dotychczasową treść na blogu, nowy czytelnik może pomyśleć, że jestem developerem, który na co dzień zajmuje się pracą z małymi modelami i hardwarem. To byłoby oczywiście bardzo miłe, ale również bardzo nieprawdziwe;)
+Od początku swojej kariery zawodowej w IT jestem związany z testowaniem oprogramowania, a w aktualnym miejscu pracy zajmuję się testowaniem aplikacji medycznych ze szczególnym naciskiem na ewaluację działania modeli LLM.&lt;/p&gt;
+&lt;p&gt;Impulsem do tego wpisu był odcinek podcastu &amp;ldquo;Dodane do backlogu&amp;rdquo; o tytule &amp;ldquo;&lt;a href=&#34;https://open.spotify.com/show/5K6L7Vs3QAE8ebO7RFbKXv&#34;&gt;Jak budować produkty AI: Evals i rola PM-a w erze LLM&lt;/a&gt;&amp;rdquo;. Pojawił się tam wątek roli QA, która może być dobrym pomostem do przyszłej pozycji &amp;ldquo;walidatora&amp;rdquo;. To stanowisko, które nie ma jeszcze de facto oficjalnej nazwy i jasno zarysowanego zakresu obowiązków, ale jest związane z ewaluacją aplikacji korzystających z LLM.
+W związku z tym, że ostatnio pracuję nad stworzeniem procesu ewaluacji do jednej z naszych aplikacji, mam parę przemyśleń, które chciałbym, żeby ze mną zostały. Najlepszym sposobem będzie ich spisanie, więc dzisiejszy post będzie raczej próbą uporządkowania pojedynczych myśli, które pojawiły mi się w ciągu ostatnich tygodni.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Czy maly model moze zastapic ify? Część druga</title>
       <link>http://localhost:1313/posts/czy_maly_model_moze_zastapic_ify_czesc_druga/</link>

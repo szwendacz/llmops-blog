@@ -127,7 +127,7 @@ Dodatkowo w trakcie testu modelu bazowego zweryfikowałem również opcje z wł�
     <h1 class="post-title entry-hint-parent">
       Czy maly model moze zastapic ify? Część druga
     </h1>
-    <div class="post-meta"><span title='2026-07-04 14:05:00 +0200 CEST'>July 4, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
+    <div class="post-meta"><span title='2026-07-04 14:05:00 +0200 CEST'>4 lipca 2026</span>&nbsp;·&nbsp;<span>3 min</span>
 
 </div>
   </header> 
@@ -137,40 +137,40 @@ Dodatkowo w trakcie testu modelu bazowego zweryfikowałem również opcje z wł�
 Model miał ustawioną flagę /no_think, temperatura wynosiła 0, a średnie latency na jedno zapytanie to ~4s.
 Dodatkowo w trakcie testu modelu bazowego zweryfikowałem również opcje z włączonym reasoningiem, ale zysk wzrósł o 3 punkty procentowe przy latency, które zwiększyło się do ~29s. Tak mała różnica w wyniku nie usprawiedliwiała tak dużej różnicy w prędkości.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Kategoria</th>
-          <th>n</th>
-          <th style="text-align: center">tool_correct</th>
-          <th style="text-align: center">params_correct</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>correct</td>
-          <td>40</td>
-          <td style="text-align: center">100%</td>
-          <td style="text-align: center">100%</td>
-      </tr>
-      <tr>
-          <td>fuzzy_params</td>
-          <td>50</td>
-          <td style="text-align: center">80%</td>
-          <td style="text-align: center">97%</td>
-      </tr>
-      <tr>
-          <td>out_of_scope</td>
-          <td>50</td>
-          <td style="text-align: center">60%</td>
-          <td style="text-align: center">—</td>
-      </tr>
-      <tr>
-          <td><strong>overall</strong></td>
-          <td><strong>140</strong></td>
-          <td style="text-align: center"><strong>79%</strong></td>
-          <td style="text-align: center"><strong>79%</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Kategoria</th>
+					<th>n</th>
+					<th style="text-align: center">tool_correct</th>
+					<th style="text-align: center">params_correct</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>correct</td>
+					<td>40</td>
+					<td style="text-align: center">100%</td>
+					<td style="text-align: center">100%</td>
+			</tr>
+			<tr>
+					<td>fuzzy_params</td>
+					<td>50</td>
+					<td style="text-align: center">80%</td>
+					<td style="text-align: center">97%</td>
+			</tr>
+			<tr>
+					<td>out_of_scope</td>
+					<td>50</td>
+					<td style="text-align: center">60%</td>
+					<td style="text-align: center">—</td>
+			</tr>
+			<tr>
+					<td><strong>overall</strong></td>
+					<td><strong>140</strong></td>
+					<td style="text-align: center"><strong>79%</strong></td>
+					<td style="text-align: center"><strong>79%</strong></td>
+			</tr>
+	</tbody>
 </table>
 <p>Kolejnym eksperymentem było &lsquo;Ograniczenia gramatyczne GBNF&rsquo; i tutaj sytuacja wyjaśniła się bardzo szybko. Qwen3-0.6B z użyciem structured output w 100% przypadków poprawnie generował format odpowiedzi, więc uznałem, że dołożenie dodatkowego mechanizmu, który będzie wymuszał format outputu nie ma sensu bo na własne życzenie wprowadzę redundancje. Temat odpuściłem.</p>
 <p>Eksperyment trzeci czyli &lsquo;Klasyfikator kaskadowy - bramka przed modelem 0.6B&rsquo; zapowiadał się bardzo ciekawie.</p>
@@ -182,30 +182,30 @@ Dodatkowo w trakcie testu modelu bazowego zweryfikowałem również opcje z wł�
 </ul>
 <p>A jak wyglądały rzeczywiste wyniki?</p>
 <table>
-  <thead>
-      <tr>
-          <th>Kategoria</th>
-          <th>exp01</th>
-          <th>exp03</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>correct</td>
-          <td>40/40</td>
-          <td>40/40</td>
-      </tr>
-      <tr>
-          <td>fuzzy_params</td>
-          <td>40/50</td>
-          <td>39/50</td>
-      </tr>
-      <tr>
-          <td>out_of_scope</td>
-          <td>26/50</td>
-          <td>50/50</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Kategoria</th>
+					<th>exp01</th>
+					<th>exp03</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>correct</td>
+					<td>40/40</td>
+					<td>40/40</td>
+			</tr>
+			<tr>
+					<td>fuzzy_params</td>
+					<td>40/50</td>
+					<td>39/50</td>
+			</tr>
+			<tr>
+					<td>out_of_scope</td>
+					<td>26/50</td>
+					<td>50/50</td>
+			</tr>
+	</tbody>
 </table>
 <p>Co jest kluczową informacją z tego eksperymentu? Model językowy angażowany był 5 razy na 140 przypadków zamiast 140 na 140, a średnie latency spadło znacznie poniżej 1s z racji bardzo rzadkiego wykorzystania LLM-a.</p>
 <p>Po zobaczeniu podsumowania tego eksperymentu, a w szczególności liczby requestów do LLM-a, zadałem sobie pytanie czy to co robię ma sens. Teoretycznie eksperyment zakończył się powodzeniem, ponieważ dowiodłem, że użycie bramki poprawiło wyniki oraz zmniejszyło latency. Z drugiej strony ten sam eksperyment pokazał, że w przypadku mojego datasetu mały model jest wywoływany bardzo rzadko, a zdecydowana większość przypadków może być klasyfikowana za pomocą dużo prostszych i szybszych metod. Miałem do wyboru dwie ścieżki: zmienić dataset na trudniejszy, co wymagałoby powtórzenia wszystkich eksperymentów i wymyślenia problemu badawczego od nowa, albo przyznać, że dla tej skali problemu istnieją lepsze metody na analizę sygnałów niż mały model językowy.</p>
@@ -224,6 +224,11 @@ Wydaje mi się, że moim kluczowym wnioskiem na przyszłość jest to, że przed
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/ewaluacja_produktu_z_llm_bez_lekarza_w_zespole/">
+    <span class="title">« Poprzednia</span>
+    <br>
+    <span>Ewaluacja produktu z LLM bez lekarza w zespole</span>
+  </a>
   <a class="next" href="http://localhost:1313/posts/po_hakatonie_wnioski_na_goraco/">
     <span class="title">Następna »</span>
     <br>

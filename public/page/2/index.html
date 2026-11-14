@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.160.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
@@ -73,6 +72,7 @@
     }
 
 </script><script data-goatcounter="https://llmops.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+	<meta name="generator" content="Hugo 0.169.0">
 </head>
 <body class="list" id="top">
     <header class="header">
@@ -121,6 +121,35 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Jaki model wariacie?
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Dygresja na początek.
+Minęło już trochę czasu od momentu w którym robiłem to co będę opisywać i przyznaję, że nie pamiętam już wszystkich szczegółów. Muszę nad tym popracować bo czuję, że to będzie problem w przyszłości.
+Problemy wieku dziecięcego Formalności mamy już za sobą więc przejdźmy do głównego tematu jakim będzie wybór małego modelu, który jest mózgiem mojego asystenta. Od samego początku chciałem żeby na nowej płytce pracował mały model i wiele obiecywałem sobie po dedykowanym procesorze na Radxa. Niestety jak to w życiu bywa sama specyfikacja techniczna bez oprogramowania nie działa i tak też było w tym przypadku. Oczywiście po części z mojej winy. Głównym winowajcą był system operacyjny, którego użyłem czyli Armbian. Nie wiem co mnie podkusiło, że wybrałem ten system zamiast zmodyfikowanej wersji Ubuntu dostarczanej przez producenta. W każdym razie poskutkowało to tym, że procesor NPU nie jest w tym momencie dostępny na żadnym systemie poza tym oferowanym przez Radxa.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-19 20:58:43 +0200 CEST'>19 kwietnia 2026</span>&nbsp;·&nbsp;<span>6 min</span></footer>
+  <a class="entry-link" aria-label="post link to Jaki model wariacie?" href="http://localhost:1313/posts/jaki_model_wariacie/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Radxa Dragon Q6A
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Zakup W czasie korzystania z pierwszej wersji swojego asystenta, która chodziła na Raspberry Pi Zero, często łapałem się na tym, że odpowiedź z bota przychodzi z zauważalnym opóźnieniem. Dzięki Langfusowi widziałem, że sam request nie trwał tak długo, więc doszedłem do wniosku, że to musiała być wina samej płytki. Od razu wiedziałem, co to oznacza. Zakup nowego sprzętu.
+Nie miałem jasno zdefiniowanych wymagań dotyczących nowego hardware’u poza jednym — chciałem mieć możliwość uruchomienia na nowej platformie lokalnego modelu LLM wielkości 1–4B. W trakcie poszukiwań miałem sporo pomysłów dotyczących docelowej platformy, ale wszystko rozbijało się o cenę. Od dłuższego czasu nie interesowałem się cenami komputerów i przeżyłem niemałe zaskoczenie. Uznaję to trochę za ironię losu, bo ceny sprzętu rosną ze względu na to, że cały świat zachłysnął się LLM. W każdym razie w grę wchodziły laptopy, mini-PC, mocniejsze modele Raspberry oraz bardziej egzotyczne płytki jak Orange Pi. Finalnie stanęło na czymś jeszcze bardziej egzotycznym (przynajmniej dla mnie) — płytce SBC Radxa Q6A.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-18 19:23:56 +0200 CEST'>18 kwietnia 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to Radxa Dragon Q6A" href="http://localhost:1313/posts/radxa_dragon_q6a-/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Asystent od środka
     </h2>
   </header>
@@ -130,7 +159,7 @@ Komunikacja z botem odbywa się w najprostszy możliwy sposób czyli przez Teleg
 Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, podsumowanie przesłanego artykułu, wyszukanie informacji w internecie oraz nowo dodana funkcja czyli podsumowanie filmów z YT. W każdym momencie można również wysłać bezpośrednie pytanie do LLM-a. Uruchomienie tych funkcji jest możliwe za pomocą “/” i zdefiniowaną nazwą usługi czyli przykładowo “/pogoda” lub za pomocą przykładowej wiadomości “jaka jest dzisiaj pogoda?”.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-04-17 13:26:36 +0200 CEST'>April 17, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <footer class="entry-footer"><span title='2026-04-17 13:26:36 +0200 CEST'>17 kwietnia 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
   <a class="entry-link" aria-label="post link to Asystent od środka" href="http://localhost:1313/posts/asystent_od_srodka/"></a>
 </article>
 
@@ -143,7 +172,7 @@ Funkcje aktywne to możliwość odpytania o bieżącą pogodę, ciekawostkę, po
     <p>Ciężko powiedzieć od czego zacząć. W sierpniu tamtego roku doszedłem do wniosku, że zacznę pisać bloga na temat LLM. Chodziło mi przede wszystkim o uporządkowanie mojej wiedzy. Tydzień po napisaniu pierwszego posta straciłem pracę i siłą rozpędu napisałem jeszcze dwa nowe posty. Patrząc na nie z perspektywy czasu nie były zbyt dobre, a dodatkowo chyba chciałem uchodzić za większego eksperta niż wtedy byłem. Na tym temat się zakończył, a ja zostałem z domeną i serwerem, z którego w ogóle nie korzystałem.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-04-09 00:00:00 +0000 UTC'>April 9, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <footer class="entry-footer"><span title='2026-04-09 00:00:00 +0000 UTC'>9 kwietnia 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
   <a class="entry-link" aria-label="post link to Trudno wymyślić dobry tytuł" href="http://localhost:1313/posts/trudno-wymyslic-dobry-tytul/"></a>
 </article>
 <footer class="page-footer">

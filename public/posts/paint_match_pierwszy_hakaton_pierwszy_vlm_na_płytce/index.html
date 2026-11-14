@@ -126,7 +126,7 @@ Zdaje sobie sprawę z tego, że miałem opisać kolejne eksperymenty, które prz
     <h1 class="post-title entry-hint-parent">
       Paint match: pierwszy hakaton, pierwszy VLM na płytce
     </h1>
-    <div class="post-meta"><span title='2026-06-09 20:37:38 +0200 CEST'>June 9, 2026</span>&nbsp;·&nbsp;<span>7 min</span>
+    <div class="post-meta"><span title='2026-06-09 20:37:38 +0200 CEST'>9 czerwca 2026</span>&nbsp;·&nbsp;<span>7 min</span>
 
 </div>
   </header> 
@@ -200,30 +200,30 @@ Czy jestem zadowolony z finalnego efektu? Jeszcze jak!</p>
 <p>MiniCPM-V-4.6 to model 1B w hybrydowej architekturze Qwen3.5-Mamba — lżejszy niż InternVL3.5-2B i z lepszym F1 jeszcze przed fine-tuningiem na moim benchmarku (0.920 vs. 0.87). Sam fine-tuning to LoRA na Modal.com z H100, 16 minut treningu i kilka dolarów, które poszły z puli którą dostawał każdy uczestnik hakatonu. Zbiór treningowy to 391 przykładów (242 ze screenshotów sklepu Airfix + 192 z papierowych instrukcji po augmentacji), zbiory testowe trzymane osobno.</p>
 <p><strong>Wyniki (po fine-tuningu):</strong></p>
 <table>
-  <thead>
-      <tr>
-          <th>Zbiór</th>
-          <th>F1</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Benchmark 10 obrazków</td>
-          <td>0.935 (wcześniej 0.920)</td>
-      </tr>
-      <tr>
-          <td>Przykłady z HF Space (4 obrazki)</td>
-          <td>1.000</td>
-      </tr>
-      <tr>
-          <td>Zbiór testowy ze sklepu (53 obrazki)</td>
-          <td>0.927</td>
-      </tr>
-      <tr>
-          <td>Zbiór testowy z papierowych instrukcji (7 obrazków)</td>
-          <td>0.928</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Zbiór</th>
+					<th>F1</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Benchmark 10 obrazków</td>
+					<td>0.935 (wcześniej 0.920)</td>
+			</tr>
+			<tr>
+					<td>Przykłady z HF Space (4 obrazki)</td>
+					<td>1.000</td>
+			</tr>
+			<tr>
+					<td>Zbiór testowy ze sklepu (53 obrazki)</td>
+					<td>0.927</td>
+			</tr>
+			<tr>
+					<td>Zbiór testowy z papierowych instrukcji (7 obrazków)</td>
+					<td>0.928</td>
+			</tr>
+	</tbody>
 </table>
 <p>Co najlepsze, latency na Radxie spadło z ~194s do ~60s - trzy razy szybciej niż poprzedni model.</p>
 <p>Jest jedno zdjęcie, które model dalej powoduje błędy ekstrakcji: Chinook, na którym numery kalek w czerwonych kwadratach wyglądają identycznie jak kody farb. Biorąc pod uwage ogólny score dla tak małego modelu oraz dużą poprawę latency uznałem, że jest to akceptowalny koszt.</p>

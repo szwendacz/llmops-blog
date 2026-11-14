@@ -125,7 +125,7 @@ Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo do
     <h1 class="post-title entry-hint-parent">
       Zmiana flow
     </h1>
-    <div class="post-meta"><span title='2026-05-03 12:02:46 +0200 CEST'>May 3, 2026</span>&nbsp;·&nbsp;<span>4 min</span>
+    <div class="post-meta"><span title='2026-05-03 12:02:46 +0200 CEST'>3 maja 2026</span>&nbsp;·&nbsp;<span>4 min</span>
 
 </div>
   </header> 
@@ -134,60 +134,60 @@ Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo do
 Pod względem wydajności sama zmiana nie ma za dużo sensu bo dokłada sporo dodatkowej logiki, plus bardzo &ldquo;usztywniła&rdquo; flow przepływu danych. Z drugiej strony była ciekawa pod względem edukacyjnym więc jestem zadowolony.</p>
 <p>Poniżej krótkie przedstawienie starego i nowego flow:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Krok</th>
-          <th>Stare flow</th>
-          <th>Nowe flow</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>Wiadomość trafia do <code>dispatch()</code></td>
-          <td>Wiadomość trafia do <code>dispatch()</code></td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>Buduj messages z historią i system promptem</td>
-          <td>Sprawdź czy jest URL w wiadomości</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>Wyślij do OpenRouter z <code>TOOL_SCHEMAS</code></td>
-          <td>Jeśli URL: wybierz <code>summarize_article</code> lub <code>summarize_youtube</code> bez LLM</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>OpenRouter decyduje które narzędzie wywołać</td>
-          <td>Jeśli brak URL: <strong>klasyfikator MLP</strong> decyduje o narzędziu lokalnie</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>OpenRouter zwraca nazwę narzędzia + argumenty</td>
-          <td>Jeśli <code>get_weather</code> lub <code>get_fun_fact</code>: wywołaj narzędzie bez argumentów</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>Wykonaj narzędzie</td>
-          <td>Jeśli <code>web_search</code>: llama-server (0.6B + <strong>GBNF</strong>) ekstrahuje argument <code>query</code></td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>Wynik wraca do OpenRouter</td>
-          <td>Jeśli <code>none</code>: llama-server (0.6B) odpowiada bezpośrednio</td>
-      </tr>
-      <tr>
-          <td>8</td>
-          <td>OpenRouter generuje finalną odpowiedź</td>
-          <td>Wykonaj narzędzie (jeśli dotyczy)</td>
-      </tr>
-      <tr>
-          <td>9</td>
-          <td>Zwróć odpowiedź</td>
-          <td>Zwróć wynik (PASSTHROUGH) lub odpowiedź llama-server</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Krok</th>
+					<th>Stare flow</th>
+					<th>Nowe flow</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Wiadomość trafia do <code>dispatch()</code></td>
+					<td>Wiadomość trafia do <code>dispatch()</code></td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>Buduj messages z historią i system promptem</td>
+					<td>Sprawdź czy jest URL w wiadomości</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>Wyślij do OpenRouter z <code>TOOL_SCHEMAS</code></td>
+					<td>Jeśli URL: wybierz <code>summarize_article</code> lub <code>summarize_youtube</code> bez LLM</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>OpenRouter decyduje które narzędzie wywołać</td>
+					<td>Jeśli brak URL: <strong>klasyfikator MLP</strong> decyduje o narzędziu lokalnie</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>OpenRouter zwraca nazwę narzędzia + argumenty</td>
+					<td>Jeśli <code>get_weather</code> lub <code>get_fun_fact</code>: wywołaj narzędzie bez argumentów</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>Wykonaj narzędzie</td>
+					<td>Jeśli <code>web_search</code>: llama-server (0.6B + <strong>GBNF</strong>) ekstrahuje argument <code>query</code></td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>Wynik wraca do OpenRouter</td>
+					<td>Jeśli <code>none</code>: llama-server (0.6B) odpowiada bezpośrednio</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>OpenRouter generuje finalną odpowiedź</td>
+					<td>Wykonaj narzędzie (jeśli dotyczy)</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>Zwróć odpowiedź</td>
+					<td>Zwróć wynik (PASSTHROUGH) lub odpowiedź llama-server</td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="co-nowego">Co nowego?<a hidden class="anchor" aria-hidden="true" href="#co-nowego">#</a></h3>
 <p>Nowe flow ma dwie ciekawe rzeczy z którymi wcześniej nie miałem do czynienia. Chodzi o klasyfikator MLP i GBNF.</p>
